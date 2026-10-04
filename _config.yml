@@ -49,6 +49,10 @@ exclude:
   - .github/
   - _config.ci.yml
   - assets/fonts/README.md
+  - src/
+  - package.json
+  - package-lock.json
+  - node_modules/
 
 defaults:
   - scope:

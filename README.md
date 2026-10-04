@@ -2,7 +2,8 @@
 
 Source for [amaninstitute.org](https://amaninstitute.org), the website of **Aman Institute for
 Intellectual Security Studies**, a 501(c)(3) nonprofit in Killeen, Texas. The site is built with
-[Jekyll](https://jekyllrb.com) and published with GitHub Pages.
+[Jekyll](https://jekyllrb.com) and [Tailwind CSS](https://tailwindcss.com), and published with
+GitHub Pages.
 
 | Page | URL | File |
 | --- | --- | --- |
@@ -44,12 +45,23 @@ is `WEa1fqNCLBo`).
 **Adding a board photo:** put a square image in `assets/images/people/` and set `photo:` for that
 member in `_data/board.yml`.
 
+### Changing the design
+
+Pages are styled with Tailwind CSS utility classes directly in the HTML (`*.html`, `_layouts/`,
+`_includes/`). Brand colors, fonts, and a few base styles are defined in `src/tailwind.css`. Small
+reusable pieces such as buttons and section headings live in `_includes/` (for example
+`_includes/btn.html`).
+
+The stylesheet the site loads, `assets/css/main.css`, is generated from those classes and isn't
+stored in the repository: the workflow builds it on every run. You can use any Tailwind class in
+the templates, including ones that weren't used before, and it will be included automatically.
+
 ## Publishing with GitHub Pages
 
 Deployment is handled by the workflow in `.github/workflows/pages.yml`:
 
-- **Pull requests:** the site is built and every internal link and image is checked. Nothing is published.
-- **Pushes to `main`:** the site is built, checked, and deployed to GitHub Pages.
+- **Pull requests:** the CSS and site are built and every internal link and image is checked. Nothing is published.
+- **Pushes to `main`:** the CSS and site are built, checked, and deployed to GitHub Pages.
 
 ### 1. Turn on GitHub Pages (one time)
 
@@ -100,23 +112,33 @@ Before cancelling the WordPress hosting, consider keeping an export of the old s
 
 ## Previewing locally
 
-Requires Ruby 3.3 and Bundler.
+Requires Ruby 3.3 with Bundler, and Node.js 20 or newer.
 
 ```sh
+npm install
 bundle install
-bundle exec jekyll serve
 ```
 
-Then open <http://localhost:4000>. To run the same link check as the workflow:
+Then run these two commands in separate terminals and open <http://localhost:4000>:
 
 ```sh
+npm run watch:css           # rebuilds assets/css/main.css when templates change
+bundle exec jekyll serve    # serves the site and rebuilds it when files change
+```
+
+To run the same build and link check as the workflow:
+
+```sh
+npm run build:css
 JEKYLL_ENV=production bundle exec jekyll build
 bundle exec htmlproofer _site --disable-external
 ```
 
 ## Credits
 
-- Fonts: [Inter](https://github.com/rsms/inter) and [Source Serif 4](https://github.com/adobe-fonts/source-serif),
-  self-hosted under the SIL Open Font License (see `assets/fonts/README.md`).
+- Styles: [Tailwind CSS](https://tailwindcss.com), MIT License.
+- Fonts: [Inter](https://github.com/rsms/inter), [Plus Jakarta Sans](https://github.com/tokotype/PlusJakartaSans),
+  and [Reem Kufi](https://github.com/aliftype/reem-kufi), self-hosted under the SIL Open Font License
+  (see `assets/fonts/README.md`).
 - Icons: [Lucide](https://lucide.dev), ISC License.
 - Logo, photos, flyers, and book covers belong to Aman Institute for Intellectual Security Studies.

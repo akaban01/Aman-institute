@@ -1,0 +1,21 @@
+{%- comment -%} Dark call-to-action panel. Params: title, text, buttons (captured HTML). {%- endcomment -%}
+<section class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
+  <div class="relative isolate overflow-hidden rounded-3xl bg-navy-900 px-6 py-14 shadow-2xl sm:px-14 sm:py-16 lg:flex lg:items-center lg:justify-between lg:gap-x-16 lg:px-16">
+    <svg viewBox="0 0 1024 1024" class="absolute top-1/2 left-1/2 -z-10 size-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-3/4 lg:-translate-x-1/2" aria-hidden="true">
+      <circle r="512" cx="512" cy="512" fill="url(#cta-glow)" fill-opacity="0.55"></circle>
+      <defs>
+        <radialGradient id="cta-glow">
+          <stop stop-color="#5bb3dc"></stop>
+          <stop offset="1" stop-color="#0a944f"></stop>
+        </radialGradient>
+      </defs>
+    </svg>
+    <div class="max-w-xl">
+      <h2 class="font-display text-3xl font-bold tracking-tight text-balance text-white sm:text-4xl">{{ include.title }}</h2>
+      <p class="mt-4 text-lg/8 text-pretty text-navy-100">{{ include.text }}</p>
+    </div>
+    <div class="mt-8 flex flex-wrap gap-3 lg:mt-0 lg:shrink-0 lg:justify-end">
+      {{ include.buttons }}
+    </div>
+  </div>
+</section>

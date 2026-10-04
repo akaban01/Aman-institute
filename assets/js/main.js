@@ -1,40 +1,31 @@
 (function () {
   "use strict";
 
-  /* Mobile navigation ----------------------------------------------------- */
-  var toggle = document.querySelector(".nav-toggle");
-  var nav = document.getElementById("site-nav");
+  /* Mobile menu ------------------------------------------------------------
+     The menu is a native <details> element, so it opens and closes without
+     JavaScript. These handlers add Escape, click-outside, and close-on-resize. */
+  var menu = document.querySelector("[data-mobile-menu]");
 
-  if (toggle && nav) {
-    var setOpen = function (open) {
-      toggle.setAttribute("aria-expanded", String(open));
-      toggle.querySelector(".nav-toggle-label").textContent = open ? "Close" : "Menu";
-      nav.classList.toggle("is-open", open);
-    };
-
-    toggle.addEventListener("click", function () {
-      setOpen(toggle.getAttribute("aria-expanded") !== "true");
-    });
+  if (menu) {
+    var summary = menu.querySelector("summary");
 
     document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape" && nav.classList.contains("is-open")) {
-        setOpen(false);
-        toggle.focus();
+      if (event.key === "Escape" && menu.open) {
+        menu.open = false;
+        summary.focus();
       }
     });
 
     document.addEventListener("click", function (event) {
-      if (nav.classList.contains("is-open") && !nav.contains(event.target) && !toggle.contains(event.target)) {
-        setOpen(false);
-      }
+      if (menu.open && !menu.contains(event.target)) menu.open = false;
     });
 
-    window.matchMedia("(min-width: 1101px)").addEventListener("change", function (event) {
-      if (event.matches) setOpen(false);
+    window.matchMedia("(min-width: 64rem)").addEventListener("change", function (event) {
+      if (event.matches) menu.open = false;
     });
   }
 
-  /* Click-to-load YouTube videos ------------------------------------------
+  /* Click-to-load YouTube videos --------------------------------------------
      Thumbnails are plain links to YouTube. With JavaScript, a click swaps the
      thumbnail for a privacy-enhanced (youtube-nocookie.com) player. */
   document.addEventListener("click", function (event) {
@@ -51,15 +42,17 @@
     iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
     iframe.referrerPolicy = "strict-origin-when-cross-origin";
     iframe.allowFullscreen = true;
+    iframe.className = "absolute inset-0 size-full border-0";
 
     var frame = document.createElement("div");
-    frame.className = "video-frame";
+    frame.className = "relative aspect-video bg-navy-950";
+    frame.dataset.videoFrame = "";
     frame.appendChild(iframe);
     link.replaceWith(frame);
     iframe.focus();
   });
 
-  /* Copy-to-clipboard buttons (contact page) ------------------------------ */
+  /* Copy-to-clipboard buttons (contact page) -------------------------------- */
   document.querySelectorAll("[data-copy]").forEach(function (button) {
     if (!navigator.clipboard) return;
     button.hidden = false;

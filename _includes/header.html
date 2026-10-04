@@ -1,23 +1,53 @@
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="{{ '/' | relative_url }}">
-      <img class="brand-logo" src="{{ '/assets/images/logo/aman-institute-logo-240.webp' | relative_url }}" alt="" width="56" height="56">
-      <span class="brand-text">
-        <span class="brand-name">Aman Institute</span>
-        <span class="brand-tagline">{{ site.tagline }}</span>
+<div class="flex h-1" aria-hidden="true">
+  <span class="w-[46%] bg-navy-700"></span><span class="w-[17%] bg-brand-sky"></span><span class="w-1/4 bg-leaf-600"></span><span class="flex-1 bg-brand-red"></span>
+</div>
+<aside aria-label="Announcement" class="bg-navy-950">
+  <div class="mx-auto flex max-w-7xl items-center justify-center gap-x-4 px-6 py-2.5 text-sm/6 lg:px-8">
+    <p class="text-navy-100">
+      <strong class="font-semibold text-white">Tanweer</strong>
+      <span class="hidden sm:inline"><svg viewBox="0 0 2 2" class="mx-2 inline size-0.5 fill-current" aria-hidden="true"><circle cx="1" cy="1" r="1"></circle></svg>Our online program on the challenges facing youth today</span>
+    </p>
+    <a href="{{ '/programs/' | relative_url }}#tanweer" class="flex-none rounded-full bg-white/10 px-3 py-1 text-sm font-semibold text-white ring-1 ring-white/20 ring-inset hover:bg-white/15">Learn more <span aria-hidden="true">&rarr;</span></a>
+  </div>
+</aside>
+<header class="sticky top-0 z-50 border-b border-navy-900/10 bg-white/90 backdrop-blur-md">
+  <div class="mx-auto flex h-18 max-w-7xl items-center justify-between gap-3 px-6 sm:gap-6 lg:px-8">
+    <a href="{{ '/' | relative_url }}" class="-m-1.5 flex min-w-0 items-center gap-3 rounded-xl p-1.5">
+      <img src="{{ '/assets/images/logo/aman-institute-logo-240.webp' | relative_url }}" alt="" width="48" height="48" class="size-12 shrink-0">
+      <span class="flex min-w-0 flex-col leading-tight">
+        <span class="font-display text-lg font-bold tracking-tight text-navy-900">Aman Institute</span>
+        <span class="truncate text-[0.66rem] font-semibold tracking-[0.05em] text-leaf-700 uppercase sm:tracking-[0.1em]">{{ site.tagline }}</span>
       </span>
     </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-      <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"></use></svg>
-      <svg class="icon icon-close" aria-hidden="true"><use href="#i-x"></use></svg>
-      <span class="nav-toggle-label">Menu</span>
-    </button>
-    <nav id="site-nav" class="site-nav" aria-label="Main">
-      <ul>
-        {%- for item in site.data.navigation %}
-        <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}{% if item.cta %} class="nav-cta"{% endif %}>{{ item.title }}</a></li>
-        {%- endfor %}
-      </ul>
+
+    <nav aria-label="Main" class="hidden lg:flex lg:items-center lg:gap-x-1">
+      {%- for item in site.data.navigation %}{% unless item.cta %}
+      <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %} class="rounded-full px-3.5 py-2 text-sm font-semibold text-navy-900 transition hover:bg-navy-50 aria-[current=page]:bg-leaf-50 aria-[current=page]:text-leaf-800">{{ item.title }}</a>
+      {%- endunless %}{% endfor %}
     </nav>
+
+    <div class="hidden lg:block">
+      {%- assign cta = site.data.navigation | where: "cta", true | first %}
+      {% capture cta_url %}{{ cta.url | relative_url }}{% endcapture %}
+      {% include btn.html href=cta_url label="Contact us" icon="arrow-right" %}
+    </div>
+
+    <details class="group lg:hidden" data-mobile-menu>
+      <summary class="flex size-11 cursor-pointer list-none items-center justify-center rounded-full text-navy-900 ring-1 ring-navy-900/15 transition hover:bg-navy-50">
+        <span class="sr-only">Menu</span>
+        {% include icon.html name="menu" class="size-5 group-open:hidden" %}
+        {% include icon.html name="x" class="hidden size-5 group-open:block" %}
+      </summary>
+      <div class="absolute inset-x-0 top-full max-h-[calc(100dvh-5rem)] overflow-y-auto border-b border-navy-900/10 bg-white shadow-xl">
+        <nav aria-label="Main" class="mx-auto max-w-7xl px-6 py-4">
+          <ul class="space-y-1">
+            {%- for item in site.data.navigation %}{% unless item.cta %}
+            <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %} class="flex items-center justify-between rounded-xl px-4 py-3 text-base font-semibold text-navy-900 hover:bg-navy-50 aria-[current=page]:bg-leaf-50 aria-[current=page]:text-leaf-800">{{ item.title }}{% include icon.html name="chevron-right" class="size-4 text-navy-300" %}</a></li>
+            {%- endunless %}{% endfor %}
+          </ul>
+          {% include btn.html href=cta_url label="Contact us" icon="arrow-right" class="mt-4 w-full" %}
+        </nav>
+      </div>
+    </details>
   </div>
 </header>

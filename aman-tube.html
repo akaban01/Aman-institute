@@ -11,22 +11,17 @@ intro: >-
   relationships, violence, and parenting.
 ---
 
-<section class="section">
-  <div class="container">
-    <div class="section-head-row">
-      <div class="section-head">
-        <h2>All videos</h2>
-        <p>Select a video to play it here, or open it on YouTube.</p>
-      </div>
-      <a class="btn btn-navy" href="{{ site.social.youtube }}" rel="noopener">
-        <svg class="icon" aria-hidden="true"><use href="#i-youtube"></use></svg>
-        Visit our YouTube channel
-      </a>
+<section class="mx-auto max-w-7xl px-6 pb-24 sm:pb-32 lg:px-8">
+  <div class="flex flex-wrap items-end justify-between gap-6 border-b border-navy-900/10 pb-8">
+    <div>
+      <h2 class="font-display text-2xl font-bold tracking-tight text-navy-950">All videos</h2>
+      <p class="mt-1 text-ink-soft">Select a video to play it here, or open it on YouTube.</p>
     </div>
-    <ul class="video-grid">
-      {%- for video in site.data.videos %}
-      <li>{% include video-card.html video=video %}</li>
-      {%- endfor %}
-    </ul>
+    {% include btn.html href=site.social.youtube label="Visit our YouTube channel" icon="youtube" icon_left=true external=true %}
   </div>
+  <ul class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {%- for video in site.data.videos %}
+    <li>{% include video-card.html video=video %}</li>
+    {%- endfor %}
+  </ul>
 </section>

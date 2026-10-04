@@ -1,11 +1,17 @@
 # Fonts
 
 Self-hosted so the site makes no requests to third-party font services.
-Latin subsets of the variable fonts, taken from [Fontsource](https://fontsource.org).
+Latin subsets of variable fonts, taken from [Fontsource](https://fontsource.org).
 
-| File | Font | License |
-| --- | --- | --- |
-| `inter-latin-wght-normal.woff2` | [Inter](https://github.com/rsms/inter), Copyright 2016 The Inter Project Authors | SIL Open Font License 1.1 |
-| `source-serif-4-latin-wght-normal.woff2`, `source-serif-4-latin-wght-italic.woff2` | [Source Serif 4](https://github.com/adobe-fonts/source-serif) by Adobe, Reserved Font Name "Source" | SIL Open Font License 1.1 |
+| File | Font | Used for | License |
+| --- | --- | --- | --- |
+| `inter-latin-wght-normal.woff2` | [Inter](https://github.com/rsms/inter), Copyright 2016 The Inter Project Authors | Body text | SIL Open Font License 1.1 |
+| `plus-jakarta-sans-latin-wght-normal.woff2` | [Plus Jakarta Sans](https://github.com/tokotype/PlusJakartaSans), Copyright 2020 The Plus Jakarta Sans Project Authors | Headings | SIL Open Font License 1.1 |
+| `reem-kufi-aman-700.woff2` | [Reem Kufi](https://github.com/aliftype/reem-kufi) Bold, Copyright 2015–2022 The Reem Kufi Project Authors | The decorative Arabic word أمان | SIL Open Font License 1.1 |
+
+`reem-kufi-aman-700.woff2` is subset to the four letters of أمان (about 1.5 KB). To add more Arabic
+text, subset the full font again with [fontTools](https://github.com/fonttools/fonttools), e.g.
+`pyftsubset ReemKufi-Bold.ttf --text="..." --layout-features='*' --flavor=woff2`, and update the
+`unicode-range` in `src/tailwind.css`.
 
 The full license text is at <https://openfontlicense.org>.

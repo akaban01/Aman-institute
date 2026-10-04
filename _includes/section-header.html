@@ -1,0 +1,10 @@
+{%- comment -%} Params: eyebrow, title, text, center, dark, id {%- endcomment -%}
+<div class="max-w-2xl{% if include.center %} mx-auto text-center{% endif %}">
+  {%- if include.eyebrow %}
+  <p class="text-base/7 font-semibold {% if include.dark %}text-brand-lime{% else %}text-leaf-700{% endif %}">{{ include.eyebrow }}</p>
+  {%- endif %}
+  <h2{% if include.id %} id="{{ include.id }}"{% endif %} class="mt-2 font-display text-3xl font-bold tracking-tight text-balance sm:text-4xl {% if include.dark %}text-white{% else %}text-navy-950{% endif %}">{{ include.title }}</h2>
+  {%- if include.text %}
+  <p class="mt-4 text-lg/8 text-pretty {% if include.dark %}text-navy-200{% else %}text-ink-soft{% endif %}">{{ include.text }}</p>
+  {%- endif %}
+</div>

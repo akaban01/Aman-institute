@@ -32,6 +32,17 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Build CSS with Tailwind
+        run: |
+          npm ci
+          npm run build:css
+
       - name: Configure GitHub Pages
         id: pages
         if: github.event_name != 'pull_request'

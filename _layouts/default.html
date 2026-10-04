@@ -3,11 +3,11 @@
 <head>
 {% include head.html %}
 </head>
-<body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
+<body class="flex min-h-dvh flex-col">
 {% include icons.svg %}
-<a class="skip-link" href="#main">Skip to main content</a>
+<a href="#main" class="sr-only rounded-lg bg-navy-950 px-4 py-2.5 text-sm font-semibold text-white focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100]">Skip to main content</a>
 {% include header.html %}
-<main id="main" tabindex="-1">
+<main id="main" tabindex="-1" class="flex-1">
 {{ content }}
 </main>
 {% include footer.html %}

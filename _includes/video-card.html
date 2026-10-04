@@ -1,13 +1,22 @@
 {%- assign v = include.video -%}
-<article class="video-card">
-  <a class="video-thumb" href="https://www.youtube.com/watch?v={{ v.id }}{% if v.start %}&amp;t={{ v.start }}s{% endif %}" data-video-id="{{ v.id }}"{% if v.start %} data-video-start="{{ v.start }}"{% endif %} data-video-title="{{ v.title | escape }}" rel="noopener">
-    <img src="https://i.ytimg.com/vi/{{ v.id }}/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-    <span class="video-play" aria-hidden="true"><svg class="icon"><use href="#i-play"></use></svg></span>
-    <span class="visually-hidden">Play video: {{ v.title }}</span>
+<article class="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-navy-900/10 transition hover:shadow-xl hover:shadow-navy-900/10">
+  <a href="https://www.youtube.com/watch?v={{ v.id }}{% if v.start %}&amp;t={{ v.start }}s{% endif %}" data-video-id="{{ v.id }}"{% if v.start %} data-video-start="{{ v.start }}"{% endif %} data-video-title="{{ v.title | escape }}" rel="noopener" class="relative block aspect-video overflow-hidden bg-navy-950 focus-visible:-outline-offset-4">
+    <img src="https://i.ytimg.com/vi/{{ v.id }}/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async" class="size-full object-cover transition duration-500 group-hover:scale-105">
+    <span class="absolute inset-0 bg-linear-to-t from-navy-950/60 via-navy-950/0 to-transparent" aria-hidden="true"></span>
+    <span class="absolute inset-0 grid place-items-center" aria-hidden="true">
+      <span class="grid size-14 place-items-center rounded-full bg-white/95 text-navy-800 shadow-lg ring-1 ring-black/5 transition duration-300 group-hover:scale-110 group-hover:bg-leaf-600 group-hover:text-white">
+        {% include icon.html name="play" class="size-6 translate-x-0.5 fill-current" %}
+      </span>
+    </span>
+    <span class="sr-only">Play video: {{ v.title }}</span>
   </a>
-  <div class="video-body">
-    {%- if v.series %}<p class="video-series">{{ v.series }}</p>{% endif %}
-    <h3 class="video-title">{{ v.title }}</h3>
-    {%- if v.speaker %}<p class="video-speaker">{{ v.speaker }}</p>{% endif %}
+  <div class="flex flex-1 flex-col p-5">
+    {%- if v.series %}
+    <p class="text-xs/5 font-semibold tracking-wide text-leaf-700 uppercase">{{ v.series }}</p>
+    {%- endif %}
+    <h3 class="mt-1 font-display text-base font-semibold text-balance text-navy-950">{{ v.title }}</h3>
+    {%- if v.speaker %}
+    <p class="mt-1 text-sm text-muted">{{ v.speaker }}</p>
+    {%- endif %}
   </div>
 </article>
