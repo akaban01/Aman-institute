@@ -1,9 +1,5 @@
 (function () {
   "use strict";
-
-  /* Mobile menu ------------------------------------------------------------
-     The menu is a native <details> element, so it opens and closes without
-     JavaScript. These handlers add Escape, click-outside, and close-on-resize. */
   var menu = document.querySelector("[data-mobile-menu]");
 
   if (menu) {
@@ -24,10 +20,6 @@
       if (event.matches) menu.open = false;
     });
   }
-
-  /* Click-to-load YouTube videos --------------------------------------------
-     Thumbnails are plain links to YouTube. With JavaScript, a click swaps the
-     thumbnail for a privacy-enhanced (youtube-nocookie.com) player. */
   document.addEventListener("click", function (event) {
     var link = event.target.closest("a[data-video-id]");
     if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.button !== 0) return;
@@ -51,8 +43,6 @@
     link.replaceWith(frame);
     iframe.focus();
   });
-
-  /* Copy-to-clipboard buttons (contact page) -------------------------------- */
   document.querySelectorAll("[data-copy]").forEach(function (button) {
     if (!navigator.clipboard) return;
     button.hidden = false;

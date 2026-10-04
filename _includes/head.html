@@ -33,7 +33,6 @@
 <script>document.documentElement.classList.add("js");</script>
 {%- if page.url == "/" %}
 <script>
-  // Old WordPress links (e.g. /?page_id=14) land on the home page; send them to the new pages.
   (function () {
     var match = location.search.match(/[?&](?:page_id|p)=(\d+)/);
     var pages = { "14": "programs/", "20": "who-is-aman/", "24": "publications/", "27": "board-members/", "33": "publications/", "41": "aman-tube/" };

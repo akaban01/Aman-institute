@@ -1,6 +1,3 @@
-# Site settings for amaninstitute.org
-# Changes to this file require restarting `jekyll serve` when previewing locally.
-
 title: Aman Institute
 full_name: Aman Institute for Intellectual Security Studies
 tagline: For Youth Intellectual Security
@@ -11,9 +8,6 @@ description: >-
   violence, extremism, and life failure.
 lang: en-US
 
-# Production address. The GitHub Actions workflow overrides `url` and `baseurl`
-# automatically, so the site also works at https://<user>.github.io/<repo>/
-# before the custom domain is connected.
 url: "https://amaninstitute.org"
 baseurl: ""
 
@@ -41,14 +35,12 @@ plugins:
   - jekyll-sitemap
 
 exclude:
-  - README.md
   - Gemfile
   - Gemfile.lock
   - vendor/
   - .bundle/
   - .github/
   - _config.ci.yml
-  - assets/fonts/README.md
   - src/
   - package.json
   - package-lock.json

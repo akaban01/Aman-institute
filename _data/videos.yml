@@ -1,6 +1,3 @@
-# Aman Tube videos, in display order. To add a video, copy an entry and paste the
-# YouTube video id (the part after "watch?v="). `start` (seconds) and `featured`
-# (shown on the home page) are optional.
 - id: WEa1fqNCLBo
   title: Introduction to Aman Institute
   speaker: Aman Institute
