@@ -57,8 +57,9 @@ jobs:
           # Use the address GitHub Pages actually serves (custom domain or github.io)
           # for canonical links, the sitemap, and social previews.
           config="_config.yml"
+          # Always use https (GitHub reports http:// until "Enforce HTTPS" is turned on).
           if [ -n "$PAGES_ORIGIN" ]; then
-            printf 'url: "%s"\n' "$PAGES_ORIGIN" > _config.ci.yml
+            printf 'url: "%s"\n' "${PAGES_ORIGIN/#http:/https:}" > _config.ci.yml
             config="$config,_config.ci.yml"
           fi
           bundle exec jekyll build --config "$config" --baseurl "$PAGES_BASE_PATH"
