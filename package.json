@@ -1,0 +1,16 @@
+{
+  "name": "aman-institute-website",
+  "private": true,
+  "description": "Website for Aman Institute for Intellectual Security Studies (amaninstitute.org)",
+  "scripts": {
+    "build:css": "tailwindcss -i src/tailwind.css -o assets/css/main.css --minify",
+    "watch:css": "tailwindcss -i src/tailwind.css -o assets/css/main.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

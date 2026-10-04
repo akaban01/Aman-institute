@@ -1,0 +1,11 @@
+{%- assign b = include.book -%}
+<a href="{{ '/publications/' | relative_url }}#{{ b.slug }}" class="group block rounded-lg">
+  <span class="relative block aspect-[2/3] overflow-hidden rounded-l-sm rounded-r-xl bg-navy-100 shadow-lg shadow-navy-900/20 ring-1 ring-navy-900/10 transition duration-300 group-hover:-translate-y-1.5 group-hover:-rotate-1 group-hover:shadow-2xl">
+    <img src="{{ '/assets/images/books/' | append: b.slug | append: '.webp' | relative_url }}" alt="" width="560" height="840" loading="lazy" decoding="async" class="size-full object-cover">
+    <span class="absolute inset-y-0 left-0 w-3 bg-linear-to-r from-black/30 to-transparent" aria-hidden="true"></span>
+  </span>
+  <span class="mt-5 block font-display text-base font-semibold text-balance text-navy-950 group-hover:text-leaf-700">{{ b.title }}</span>
+  {%- if b.subtitle %}
+  <span class="mt-1 block text-sm text-muted">{{ b.subtitle }}</span>
+  {%- endif %}
+</a>

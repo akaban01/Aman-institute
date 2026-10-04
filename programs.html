@@ -1,0 +1,104 @@
+---
+title: Programs
+permalink: /programs/
+eyebrow: Programs &amp; services
+description: >-
+  The Tanweer online program, counseling, workshops, parenting support,
+  research, and the Intellectual Security Therapy Diploma from Aman Institute.
+intro: >-
+  Professional programs that help young people and families recognize harmful
+  ideas, strengthen their faith and identity, and find practical remedies for
+  the challenges of modern life.
+---
+{%- assign tanweer_video = site.data.videos | where: "id", "e-9J6FgcSLo" | first -%}
+{%- capture contact_url %}{{ '/contact/' | relative_url }}{% endcapture -%}
+
+<section id="tanweer" class="mx-auto max-w-7xl scroll-mt-28 px-6 py-20 sm:py-28 lg:px-8">
+  <div class="grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
+    <figure class="lg:col-span-5">
+      <div class="relative isolate mx-auto max-w-sm">
+        <div class="absolute -inset-2.5 -z-10 -rotate-2 rounded-[2rem] bg-linear-to-br from-navy-100 to-leaf-100 sm:-inset-4 sm:-rotate-3" aria-hidden="true"></div>
+        <img src="{{ '/assets/images/flyers/tanweer-program-flyer-preview.webp' | relative_url }}" alt="Tanweer online program flyer: Youth and the threats to which remedies are required" width="600" height="800" loading="lazy" decoding="async" class="w-full rounded-2xl shadow-2xl ring-1 ring-navy-900/10">
+      </div>
+      <figcaption class="mt-8 text-center">
+        <a href="{{ '/assets/images/flyers/tanweer-program-flyer.jpg' | relative_url }}" download class="inline-flex items-center gap-2 text-sm font-semibold text-navy-700 hover:text-navy-900">{% include icon.html name="download" class="size-4" %}Download the Tanweer flyer (JPG)</a>
+      </figcaption>
+    </figure>
+    <div class="lg:col-span-7">
+      <p class="text-base/7 font-semibold text-leaf-700">Featured program</p>
+      <h2 class="mt-2 font-display text-3xl font-bold tracking-tight text-navy-950 sm:text-4xl">Tanweer online program</h2>
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-leaf-50 px-3 py-1 text-sm font-semibold text-leaf-800 ring-1 ring-leaf-700/15 ring-inset">{% include icon.html name="video" class="size-4" %}Online on Zoom</span>
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-navy-50 px-3 py-1 text-sm font-semibold text-navy-800 ring-1 ring-navy-700/15 ring-inset">{% include icon.html name="lightbulb" class="size-4" %}“Tanweer” means enlightenment</span>
+      </div>
+      <p class="mt-6 font-display text-xl/8 font-semibold text-navy-900">Youth and the threats to which remedies are required.</p>
+      <p class="mt-4 text-lg/8 text-ink-soft">Tanweer is an online program on the pressures facing young people today, exploring remedies rooted in faith, family, and sound thinking. Its sessions cover topics from smoking and the dark web to depression, extremism, and parenting.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        {% include btn.html href=contact_url label="Ask about upcoming sessions" icon="arrow-right" %}
+        {%- if tanweer_video %}
+        {% capture tanweer_video_url %}https://www.youtube.com/watch?v={{ tanweer_video.id }}&amp;t={{ tanweer_video.start }}s{% endcapture %}
+        {% include btn.html href=tanweer_video_url label="Watch the Parenting session" variant="outline" icon="play" icon_left=true external=true %}
+        {%- endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-navy-50/70 py-20 sm:py-28">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    {% include section-header.html eyebrow="Tanweer topics" title="The challenges we address" %}
+    <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {%- for group in site.data.tanweer %}
+      <li class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-navy-900/5">
+        <div class="flex items-center gap-3">
+          <span class="grid size-11 place-items-center rounded-xl {% cycle 'bg-navy-50 text-navy-700', 'bg-leaf-50 text-leaf-700' %}">{% include icon.html name=group.icon %}</span>
+          <h3 class="font-display text-base font-semibold text-navy-950">{{ group.group }}</h3>
+        </div>
+        <ul class="mt-5 flex flex-wrap gap-2">
+          {%- for topic in group.topics %}
+          <li class="rounded-full bg-navy-50 px-3 py-1 text-sm font-medium text-ink-soft">{{ topic }}</li>
+          {%- endfor %}
+        </ul>
+      </li>
+      {%- endfor %}
+      <li class="flex flex-col justify-center rounded-3xl border-2 border-dashed border-navy-900/15 p-6">
+        <h3 class="font-display text-base font-semibold text-navy-950">Have a topic in mind?</h3>
+        <p class="mt-2 text-sm/6 text-ink-soft">Let us know what young people in your family or community are facing.</p>
+        <a href="{{ contact_url }}" class="group mt-4 inline-flex items-center gap-2 text-sm font-semibold text-leaf-700 hover:text-leaf-800">Contact us {% include icon.html name="arrow-right" class="size-4 transition group-hover:translate-x-0.5" %}</a>
+      </li>
+    </ul>
+    {% include crisis-notice.html class="mt-10" %}
+  </div>
+</section>
+
+<section class="mx-auto max-w-7xl px-6 py-20 sm:py-28 lg:px-8">
+  {% include section-header.html eyebrow="Services" title="How we help" text="Alongside Tanweer, the institute offers ongoing services for young people, parents, and the wider community." %}
+  <ul class="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+    {%- for service in site.data.services %}{% unless forloop.last %}
+    <li class="flex gap-5">
+      <span class="grid size-12 shrink-0 place-items-center rounded-2xl {% cycle 'bg-navy-700 text-white', 'bg-leaf-700 text-white' %} shadow-sm">{% include icon.html name=service.icon class="size-6" %}</span>
+      <div>
+        <h3 class="font-display text-lg font-semibold text-navy-950">{{ service.title }}</h3>
+        <p class="mt-1.5 text-base/7 text-ink-soft">{{ service.text }}</p>
+      </div>
+    </li>
+    {%- endunless %}{% endfor %}
+  </ul>
+  {%- assign diploma = site.data.services | last %}
+  <div class="relative isolate mt-16 flex flex-col gap-6 overflow-hidden rounded-3xl bg-navy-900 p-8 shadow-xl shadow-navy-900/20 sm:flex-row sm:items-center sm:p-10">
+    <div class="absolute inset-0 -z-10 bg-[radial-gradient(50%_120%_at_100%_0%,rgb(91_179_220/0.35),transparent),radial-gradient(40%_100%_at_0%_100%,rgb(10_148_79/0.35),transparent)]" aria-hidden="true"></div>
+    <span class="grid size-14 shrink-0 place-items-center rounded-2xl bg-white/10 text-brand-lime ring-1 ring-white/15">{% include icon.html name=diploma.icon class="size-7" %}</span>
+    <div class="flex-1">
+      <h3 class="font-display text-xl font-bold text-white">{{ diploma.title }}</h3>
+      <p class="mt-1.5 text-navy-100">{{ diploma.text }}</p>
+    </div>
+    {% include btn.html href=contact_url label="Ask about the diploma" variant="light" icon="arrow-right" class="shrink-0" %}
+  </div>
+</section>
+
+{%- capture cta_buttons -%}
+  {% capture flyer_url %}{{ '/assets/images/flyers/aman-institute-flyer.jpg' | relative_url }}{% endcapture %}
+  {% include btn.html href=contact_url label="Contact us" variant="light" icon="arrow-right" %}
+  {% include btn.html href=flyer_url label="Institute flyer" variant="outline-light" icon="download" icon_left=true download=true %}
+{%- endcapture -%}
+{% include cta.html title="Bring Aman to your community" text="Request a workshop, arrange counseling, or ask about our programs. Download our flyer to share with your mosque, school, or family." buttons=cta_buttons %}

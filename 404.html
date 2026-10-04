@@ -1,0 +1,25 @@
+---
+title: Page not found
+permalink: /404.html
+layout: default
+sitemap: false
+---
+
+<section class="relative isolate flex h-full items-center overflow-hidden bg-white">
+  {% include bg-decor.html id="not-found-grid" %}
+  <div class="mx-auto max-w-2xl px-6 py-24 text-center sm:py-32 lg:px-8">
+    <p class="font-display text-base font-semibold text-leaf-700">404</p>
+    <h1 class="mt-4 font-display text-5xl font-extrabold tracking-tight text-balance text-navy-950 sm:text-6xl">We couldn't find that page</h1>
+    <p class="mt-6 text-lg/8 text-pretty text-ink-soft">The page may have moved when our website was updated. Try one of these instead.</p>
+    <div class="mt-10 flex flex-wrap justify-center gap-3">
+      {% capture home_url %}{{ '/' | relative_url }}{% endcapture %}
+      {% capture programs_url %}{{ '/programs/' | relative_url }}{% endcapture %}
+      {% capture tube_url %}{{ '/aman-tube/' | relative_url }}{% endcapture %}
+      {% capture contact_url %}{{ '/contact/' | relative_url }}{% endcapture %}
+      {% include btn.html href=home_url label="Go to the home page" icon="arrow-right" %}
+      {% include btn.html href=programs_url label="Programs" variant="outline" %}
+      {% include btn.html href=tube_url label="Aman Tube" variant="outline" %}
+      {% include btn.html href=contact_url label="Contact" variant="outline" %}
+    </div>
+  </div>
+</section>

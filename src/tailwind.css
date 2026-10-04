@@ -1,0 +1,117 @@
+/*
+  Aman Institute — Tailwind CSS entry point.
+  Compiled to assets/css/main.css by `npm run build:css` (CI does this automatically).
+*/
+@import "tailwindcss" source(none);
+
+/* Only scan the site's templates, data files, and scripts for class names. */
+@source "../_includes";
+@source "../_layouts";
+@source "../*.html";
+@source "../_data";
+@source "../assets/js";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-arabic: "Reem Kufi", "Geeza Pro", "Noto Kufi Arabic", "Segoe UI", Tahoma, sans-serif;
+
+  /* Logo blue */
+  --color-navy-50: #f1f5fb;
+  --color-navy-100: #e1ebf6;
+  --color-navy-200: #c3d6ec;
+  --color-navy-300: #93b6dc;
+  --color-navy-400: #5b8fc4;
+  --color-navy-500: #2f73b3;
+  --color-navy-600: #1b64a8;
+  --color-navy-700: #0b508e;
+  --color-navy-800: #0b3d6e;
+  --color-navy-900: #0a2747;
+  --color-navy-950: #061a33;
+
+  /* Logo green */
+  --color-leaf-50: #effaf3;
+  --color-leaf-100: #e2f3e9;
+  --color-leaf-200: #bfe6cd;
+  --color-leaf-300: #8fd2a8;
+  --color-leaf-400: #4fb87a;
+  --color-leaf-500: #1fa35e;
+  --color-leaf-600: #0a944f;
+  --color-leaf-700: #07733d;
+  --color-leaf-800: #065f33;
+  --color-leaf-900: #054d2a;
+  --color-leaf-950: #022b17;
+
+  /* Logo accents */
+  --color-brand-sky: #5bb3dc;
+  --color-brand-lime: #9ccc55;
+  --color-brand-red: #c8202f;
+
+  /* Text */
+  --color-ink: #142235;
+  --color-ink-soft: #3a4c63;
+  --color-muted: #56677d;
+}
+
+/* Fonts: self-hosted, SIL Open Font License (see assets/fonts/README.md). */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("../fonts/plus-jakarta-sans-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Subset containing only the letters of أمان, used for the decorative Arabic name. */
+@font-face {
+  font-family: "Reem Kufi";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/reem-kufi-aman-700.woff2") format("woff2");
+  unicode-range: U+0623, U+0627, U+0645, U+0646;
+}
+
+/* Stroke styling for the Lucide icon sprite (_includes/icons.svg). */
+@utility icon {
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-padding-top: 6rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-brand-sky);
+    outline-offset: 3px;
+  }
+
+  main:focus { outline: none; }
+
+  /* The mobile menu uses <details>; hide the default disclosure marker. */
+  summary::-webkit-details-marker { display: none; }
+}

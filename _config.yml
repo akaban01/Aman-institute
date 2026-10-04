@@ -1,0 +1,53 @@
+title: Aman Institute
+full_name: Aman Institute for Intellectual Security Studies
+tagline: For Youth Intellectual Security
+description: >-
+  Aman Institute for Intellectual Security Studies is a 501(c)(3) nonprofit in
+  Killeen, Texas that promotes the intellectual, spiritual, and mental safety of
+  youth and offers solutions to the deviant thinking that leads to addiction,
+  violence, extremism, and life failure.
+lang: en-US
+
+url: "https://amaninstitute.org"
+baseurl: ""
+
+contact:
+  email: amaninstit21@yahoo.com
+  phones:
+    - display: "+1 (850) 319-2870"
+      tel: "+18503192870"
+    - display: "+1 (254) 290-3946"
+      tel: "+12542903946"
+  address:
+    street: 505 Omar Dr.
+    city: Killeen
+    region: TX
+    postal_code: "76542"
+    country: US
+  map_url: "https://www.google.com/maps/search/?api=1&query=505+Omar+Dr%2C+Killeen%2C+TX+76542"
+
+social:
+  youtube: "https://www.youtube.com/@amaninstituteforyouthintel2142"
+
+permalink: pretty
+
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - .github/
+  - _config.ci.yml
+  - src/
+  - package.json
+  - package-lock.json
+  - node_modules/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page

@@ -1,0 +1,27 @@
+---
+title: Aman Tube
+permalink: /aman-tube/
+eyebrow: Video library
+description: >-
+  Lectures, classes, and program sessions from Aman Institute on the challenges
+  facing Muslim youth, from spirituality and motivation to parenting.
+intro: >-
+  Lectures, classes, and program sessions from Aman Institute's YouTube channel
+  on the challenges facing Muslim youth, from spirituality and motivation to
+  relationships, violence, and parenting.
+---
+
+<section class="mx-auto max-w-7xl px-6 pb-24 sm:pb-32 lg:px-8">
+  <div class="flex flex-wrap items-end justify-between gap-6 border-b border-navy-900/10 pb-8">
+    <div>
+      <h2 class="font-display text-2xl font-bold tracking-tight text-navy-950">All videos</h2>
+      <p class="mt-1 text-ink-soft">Select a video to play it here, or open it on YouTube.</p>
+    </div>
+    {% include btn.html href=site.social.youtube label="Visit our YouTube channel" icon="youtube" icon_left=true external=true %}
+  </div>
+  <ul class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {%- for video in site.data.videos %}
+    <li>{% include video-card.html video=video %}</li>
+    {%- endfor %}
+  </ul>
+</section>
