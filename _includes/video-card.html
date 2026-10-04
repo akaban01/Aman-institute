@@ -1,0 +1,13 @@
+{%- assign v = include.video -%}
+<article class="video-card">
+  <a class="video-thumb" href="https://www.youtube.com/watch?v={{ v.id }}{% if v.start %}&amp;t={{ v.start }}s{% endif %}" data-video-id="{{ v.id }}"{% if v.start %} data-video-start="{{ v.start }}"{% endif %} data-video-title="{{ v.title | escape }}" rel="noopener">
+    <img src="https://i.ytimg.com/vi/{{ v.id }}/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
+    <span class="video-play" aria-hidden="true"><svg class="icon"><use href="#i-play"></use></svg></span>
+    <span class="visually-hidden">Play video: {{ v.title }}</span>
+  </a>
+  <div class="video-body">
+    {%- if v.series %}<p class="video-series">{{ v.series }}</p>{% endif %}
+    <h3 class="video-title">{{ v.title }}</h3>
+    {%- if v.speaker %}<p class="video-speaker">{{ v.speaker }}</p>{% endif %}
+  </div>
+</article>

@@ -1,0 +1,83 @@
+name: Website
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Pull requests: newest push wins. Deploys: run one at a time and never cancel a deploy mid-way.
+concurrency:
+  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || 'pages' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    name: Build and check
+    runs-on: ubuntu-latest
+    env:
+      # The link checker reads pages using the locale's encoding; the site contains Arabic text.
+      LANG: C.UTF-8
+      LC_ALL: C.UTF-8
+    steps:
+      - name: Check out
+        uses: actions/checkout@v6
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Configure GitHub Pages
+        id: pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
+
+      - name: Build with Jekyll
+        env:
+          JEKYLL_ENV: production
+          PAGES_ORIGIN: ${{ steps.pages.outputs.origin }}
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: |
+          # Use the address GitHub Pages actually serves (custom domain or github.io)
+          # for canonical links, the sitemap, and social previews.
+          config="_config.yml"
+          if [ -n "$PAGES_ORIGIN" ]; then
+            printf 'url: "%s"\n' "$PAGES_ORIGIN" > _config.ci.yml
+            config="$config,_config.ci.yml"
+          fi
+          bundle exec jekyll build --config "$config" --baseurl "$PAGES_BASE_PATH"
+
+      - name: Check links and images
+        env:
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: |
+          args=(--disable-external)
+          if [ -n "$PAGES_BASE_PATH" ]; then
+            args+=(--swap-urls "^${PAGES_BASE_PATH}/:/")
+          fi
+          bundle exec htmlproofer _site "${args[@]}"
+
+      - name: Upload site
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+
+  deploy:
+    name: Deploy to GitHub Pages
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,110 @@
+---
+title: Who is Aman?
+permalink: /who-is-aman/
+eyebrow: About the institute
+description: >-
+  Aman Institute for Intellectual Security Studies is a 501(c)(3) nonprofit that
+  works for the intellectual safety of Muslim youth and addresses deviant
+  thinking through professional programs.
+intro: >-
+  Aman Institute for Intellectual Security Studies is a 501(c)(3) nonprofit
+  organization that works for the intellectual safety of Muslim youth and
+  addresses deviant thinking through professional programs.
+---
+
+<section class="section">
+  <div class="container split reverse">
+    <div class="prose">
+      <p class="eyebrow">Our mission</p>
+      <h2>Safe minds, strong faith, healthy futures</h2>
+      <p>Aman Institute promotes the intellectual, spiritual, and mental safety of young people and provides solutions to the deviant thinking that leads to addiction, violence, extremism, and life failure.</p>
+      <p>We work with youth, parents, and the wider community through counseling, workshops, parenting support, research, and online programs such as <a href="{{ '/programs/' | relative_url }}#tanweer">Tanweer</a>, grounded in a published series of studies on intellectual security for the Muslim community in America.</p>
+    </div>
+    <aside class="name-card" aria-labelledby="name-heading">
+      <span class="arabic" lang="ar" dir="rtl">أمان</span>
+      <h2 id="name-heading">Why “Aman”?</h2>
+      <p><em>Aman</em> is Arabic for safety, security, and peace of mind. It names what we hope every young person can have: a mind that is protected, a faith that is secure, and a future that is safe.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container definition">
+    <figure class="big-quote">
+      <blockquote>
+        <p>In Islam, intellectual security is the state of being able to think clearly and critically, without being influenced by harmful or destructive ideas.</p>
+      </blockquote>
+      <figcaption>From <cite>The Islamic Theory of Intellectual Security</cite></figcaption>
+    </figure>
+    <div>
+      <p class="eyebrow">Intellectual security</p>
+      <h2>What we mean by intellectual security</h2>
+      <ul class="check-list">
+        <li>It is an integral part of the overall security of society, alongside other kinds of security.</li>
+        <li>It rests on preserving a person's identity and thinking from deviation, and on holding to the moderation of Islam.</li>
+        <li>It stems from the Holy Qur'an and the purified Sunnah of the Prophet ﷺ.</li>
+        <li>Flexibility and renewal are characteristics of Islamic thought.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Our foundations</p>
+      <h2>Six pillars of intellectual security</h2>
+      <p>The theory of intellectual security in Islam, as set out in the institute's work, stands on six pillars.</p>
+    </div>
+    <ul class="pillar-grid">
+      {%- for pillar in site.data.pillars %}
+      <li class="pillar">
+        <span class="icon-badge{% cycle '', ' green' %}"><svg class="icon" aria-hidden="true"><use href="#i-{{ pillar.icon }}"></use></svg></span>
+        <h3>{{ pillar.title }}</h3>
+        <p>{{ pillar.text }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Why it matters</p>
+      <h2>Good for the individual, the family, and society</h2>
+    </div>
+    <ul class="card-grid">
+      <li class="card">
+        <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-brain"></use></svg></span>
+        <h3>The individual</h3>
+        <p>Intellectual security protects the mind from deviant ideology and misguided thinking, so young people can think clearly and choose well.</p>
+      </li>
+      <li class="card">
+        <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-house-heart"></use></svg></span>
+        <h3>The family</h3>
+        <p>Families built on a sound foundation, enjoying social and intellectual security, are the building blocks of a strong and healthy society.</p>
+      </li>
+      <li class="card">
+        <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg></span>
+        <h3>The community</h3>
+        <p>It preserves a community's identity and helps detect deviant ideologies before they take root.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <h2>Meet the people behind Aman</h2>
+        <p>Aman Institute is led by a board of directors under the presidency of Dr. Ihab Abdelgawad Al-Faidy.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-light" href="{{ '/board-members/' | relative_url }}">Board members</a>
+        <a class="btn btn-outline-light" href="{{ '/programs/' | relative_url }}">Our programs</a>
+      </div>
+    </div>
+  </div>
+</section>

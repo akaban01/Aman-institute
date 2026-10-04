@@ -1,0 +1,8 @@
+{%- assign b = include.book -%}
+<a class="book-card" href="{{ '/publications/' | relative_url }}#{{ b.slug }}">
+  <span class="book-cover">
+    <img src="{{ '/assets/images/books/' | append: b.slug | append: '.webp' | relative_url }}" alt="" width="560" height="840" loading="lazy" decoding="async">
+  </span>
+  <span class="book-card-title">{{ b.title }}</span>
+  {%- if b.subtitle %}<span class="book-card-subtitle">{{ b.subtitle }}</span>{% endif %}
+</a>

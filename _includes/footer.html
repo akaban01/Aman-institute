@@ -1,0 +1,49 @@
+{%- assign addr = site.contact.address -%}
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="{{ '/assets/images/logo/aman-institute-logo-white.webp' | relative_url }}" alt="Aman Institute for Intellectual Security Studies" width="132" height="132" loading="lazy">
+      <p>{{ site.full_name }} is a 501(c)(3) nonprofit organization working for the intellectual, spiritual, and mental safety of youth.</p>
+    </div>
+    <nav class="footer-col" aria-label="Footer">
+      <h2 class="footer-heading">Explore</h2>
+      <ul class="footer-links">
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        {%- for item in site.data.navigation %}
+        <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    <div class="footer-col">
+      <h2 class="footer-heading">Contact</h2>
+      <ul class="footer-contact">
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-map-pin"></use></svg>
+          <a href="{{ site.contact.map_url }}" rel="noopener">{{ addr.street }}<br>{{ addr.city }}, {{ addr.region }} {{ addr.postal_code }}</a>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+          <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
+        </li>
+        {%- for phone in site.contact.phones %}
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          <a href="tel:{{ phone.tel }}">{{ phone.display }}</a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2 class="footer-heading">Watch &amp; learn</h2>
+      <p>Lectures, classes, and program sessions on our YouTube channel.</p>
+      <a class="btn btn-light btn-sm" href="{{ site.social.youtube }}" rel="noopener">
+        <svg class="icon" aria-hidden="true"><use href="#i-youtube"></use></svg>
+        Watch on YouTube
+      </a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; {{ site.time | date: '%Y' }} {{ site.full_name }}. All rights reserved.</p>
+    <p>A 501(c)(3) nonprofit organization &middot; Killeen, Texas</p>
+  </div>
+</footer>

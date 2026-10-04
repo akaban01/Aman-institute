@@ -1,0 +1,180 @@
+---
+layout: default
+title: Home
+body_class: home
+---
+{%- assign featured_videos = site.data.videos | where: "featured", true -%}
+{%- assign primary_phone = site.contact.phones | first -%}
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow eyebrow-light">{{ site.full_name }}</p>
+      <h1>Intellectual security for Muslim youth in America</h1>
+      <p class="lead">We are a 501(c)(3) nonprofit that promotes the intellectual, spiritual, and mental safety of young people, and offers solutions to the deviant thinking that leads to addiction, violence, extremism, and life failure.</p>
+      <div class="btn-row">
+        <a class="btn btn-light" href="{{ '/programs/' | relative_url }}">
+          Explore our programs
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+        </a>
+        <a class="btn btn-outline-light" href="{{ '/aman-tube/' | relative_url }}">
+          <svg class="icon" aria-hidden="true"><use href="#i-monitor-play"></use></svg>
+          Watch Aman Tube
+        </a>
+      </div>
+      <ul class="hero-meta">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-shield-check"></use></svg> <span>501(c)(3) nonprofit</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-map-pin"></use></svg> <span>Killeen, Texas</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-video"></use></svg> <span>Online programs on Zoom</span></li>
+      </ul>
+    </div>
+    <div class="hero-art">
+      <svg class="hero-arches" viewBox="0 0 600 600" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+        <path d="M180 600V330a120 120 0 0 1 240 0v270"/>
+        <path d="M130 600V330a170 170 0 0 1 340 0v270"/>
+        <path d="M80 600V330a220 220 0 0 1 440 0v270"/>
+        <path d="M30 600V330a270 270 0 0 1 540 0v270"/>
+      </svg>
+      <img class="hero-logo" src="{{ '/assets/images/logo/aman-institute-logo-white.webp' | relative_url }}" alt="Aman Institute USA logo: For Youth Intellectual Security Studies" width="489" height="487" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container definition">
+    <figure class="big-quote">
+      <blockquote>
+        <p>In Islam, intellectual security is the state of being able to think clearly and critically, without being influenced by harmful or destructive ideas.</p>
+      </blockquote>
+      <figcaption>From <cite>The Islamic Theory of Intellectual Security</cite> by Dr. Ihab Abdel Gawad Al&#8209;Faidy</figcaption>
+    </figure>
+    <div>
+      <p class="eyebrow">Who we are</p>
+      <h2>Aman means safety</h2>
+      <p><span lang="ar" dir="rtl">أمان</span> (<em>aman</em>) is the Arabic word for safety and security. Aman Institute works for the intellectual safety of Muslim youth and addresses deviant thinking through professional programs, counseling, and research.</p>
+      <p><a class="text-link" href="{{ '/who-is-aman/' | relative_url }}">Who is Aman? <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head-row">
+      <div class="section-head">
+        <p class="eyebrow">What we do</p>
+        <h2>Support for youth, parents, and communities</h2>
+      </div>
+      <a class="text-link" href="{{ '/programs/' | relative_url }}">All programs and services <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+    </div>
+    <ul class="service-tiles">
+      {%- for service in site.data.services %}
+      <li class="service-tile">
+        <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-{{ service.icon }}"></use></svg></span>
+        {{ service.title }}
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="flyer-wrap">
+      <figure class="flyer-frame">
+        <img src="{{ '/assets/images/flyers/tanweer-program-flyer-preview.webp' | relative_url }}" alt="Tanweer online program flyer: Youth and the threats to which remedies are required" width="600" height="800" loading="lazy" decoding="async">
+      </figure>
+    </div>
+    <div>
+      <p class="eyebrow">Featured program</p>
+      <h2>Tanweer: guiding youth through today's challenges</h2>
+      <div class="pill-row">
+        <span class="pill"><svg class="icon" aria-hidden="true"><use href="#i-video"></use></svg> Online on Zoom</span>
+      </div>
+      <p>Tanweer, meaning “enlightenment” in Arabic, is our online program on the threats young people face today and the remedies they need, from addiction and life online to mental health, extremism, and family life.</p>
+      <ul class="chip-list">
+        {%- for group in site.data.tanweer %}{% for topic in group.topics %}
+        <li>{{ topic }}</li>
+        {%- endfor %}{% endfor %}
+      </ul>
+      <div class="btn-row">
+        <a class="btn btn-navy" href="{{ '/programs/' | relative_url }}#tanweer">About Tanweer</a>
+        <a class="btn btn-outline" href="{{ '/contact/' | relative_url }}">Ask about the schedule</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head-row">
+      <div class="section-head">
+        <p class="eyebrow">Publications</p>
+        <h2>A book series on intellectual security</h2>
+        <p>Written by the institute's president, Dr. Ihab Abdelgawad Al-Faidy, and translated into English.</p>
+      </div>
+      <a class="text-link" href="{{ '/publications/' | relative_url }}">Browse publications <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+    </div>
+    <ul class="book-grid">
+      {%- for book in site.data.books %}
+      <li>{% include book-card.html book=book %}</li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head-row">
+      <div class="section-head">
+        <p class="eyebrow">Aman Tube</p>
+        <h2>Lectures, classes, and program sessions</h2>
+      </div>
+      <a class="text-link" href="{{ '/aman-tube/' | relative_url }}">All videos <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+    </div>
+    <ul class="video-grid">
+      {%- for video in featured_videos %}
+      <li>{% include video-card.html video=video %}</li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container leader">
+    <figure class="leader-photo">
+      <img src="{{ '/assets/images/people/ihab-abdelgawad.webp' | relative_url }}" alt="Portrait of Dr. Ihab Abdelgawad Al-Faidy" width="480" height="480" loading="lazy" decoding="async">
+    </figure>
+    <div>
+      <p class="eyebrow">Leadership</p>
+      <h2 class="leader-name">Dr. Ihab Abdelgawad Al-Faidy</h2>
+      <p class="leader-role">President, {{ site.full_name }}</p>
+      <ul class="credential-list">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-mosque"></use></svg> <span>Imam of the Islamic Community of Greater Killeen, Central Texas</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-file-search"></use></svg> <span>Researcher in Da‘wah affairs and Islamic culture</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-book-open-text"></use></svg> <span>Author of a book series on intellectual security for Muslim youth</span></li>
+      </ul>
+      <a class="btn btn-navy" href="{{ '/board-members/' | relative_url }}">Meet the board</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <h2>Let's talk</h2>
+        <p>Questions about our programs, counseling, workshops, or publications? We would be glad to hear from you.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-light" href="mailto:{{ site.contact.email }}">
+          <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+          Email us
+        </a>
+        <a class="btn btn-outline-light" href="tel:{{ primary_phone.tel }}">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          {{ primary_phone.display }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

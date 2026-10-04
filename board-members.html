@@ -1,0 +1,55 @@
+---
+title: Board Members
+permalink: /board-members/
+eyebrow: Leadership
+description: >-
+  Meet the board of Aman Institute for Intellectual Security Studies, led by
+  its president, Dr. Ihab Abdelgawad Al-Faidy.
+intro: >-
+  Aman Institute is governed by a board of directors committed to the
+  intellectual, spiritual, and mental safety of youth.
+---
+
+<section class="section">
+  <div class="container leader">
+    <figure class="leader-photo">
+      <img src="{{ '/assets/images/people/ihab-abdelgawad.webp' | relative_url }}" alt="Portrait of Dr. Ihab Abdelgawad Al-Faidy" width="480" height="480" decoding="async">
+    </figure>
+    <div>
+      <p class="eyebrow">President</p>
+      <h2 class="leader-name">Dr. Ihab Abdelgawad Al-Faidy</h2>
+      <p class="leader-role">President, {{ site.full_name }}</p>
+      <ul class="credential-list">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-mosque"></use></svg> <span>Imam of the Islamic Community of Greater Killeen, Central Texas</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-file-search"></use></svg> <span>Researcher in Da‘wah affairs and Islamic culture</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-book-open-text"></use></svg> <span>Author of a book series on intellectual security, including <em>The Islamic Theory of Intellectual Security</em></span></li>
+      </ul>
+      <a class="text-link" href="{{ '/publications/' | relative_url }}">Read about his books <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Board of directors</p>
+      <h2>Our board</h2>
+    </div>
+    <ul class="board-grid">
+      {%- for member in site.data.board %}
+      {%- assign words = member.name | remove: "Dr. " | split: " " %}
+      <li class="member">
+        <span class="member-avatar">
+          {%- if member.photo %}
+          <img src="{{ member.photo | relative_url }}" alt="" width="96" height="96" loading="lazy" decoding="async">
+          {%- else %}
+          <span aria-hidden="true">{{ words.first | slice: 0 }}{{ words.last | slice: 0 }}</span>
+          {%- endif %}
+        </span>
+        <h3>{{ member.name }}</h3>
+        <p>{{ member.role }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

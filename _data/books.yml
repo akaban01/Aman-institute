@@ -1,0 +1,71 @@
+# Publications, in display order. Text is drawn from each book's back cover.
+# Cover images live in assets/images/books/<slug>.webp (front) and
+# assets/images/books/<slug>-full-cover.jpg (full wrap-around cover).
+- slug: intellectual-security-for-american-muslim-youth
+  title: Intellectual Security for American Muslim Youth
+  subtitle: An Introduction
+  author: Dr. Ihab Mohamed Atia Abdel Gawad
+  translator: Hassan Bekhit Hassan
+  summary: >-
+    The opening book in the institute's series on intellectual security. It
+    introduces the concept of security and its types, defines intellectual
+    security and its aspects, and explains why it is such an important issue
+    for the Muslim community, and for Muslim youth in North America in
+    particular, given the internal and external pressures they face.
+  points:
+    - Intellectual security and its place among the other types of security
+    - "The vision of Islamic Shari'a for safeguarding religion, mind, and identity"
+    - Protecting the mind from intellectual deviation, deviant ideology, and misguided thinking
+    - Intellectual security in knowledge and scientific output
+    - Its importance for the individual and for society
+    - How it preserves a community's identity and detects deviant ideologies
+
+- slug: deviation-of-religious-thought
+  title: Deviation of Religious Thought
+  subtitle: Causes, Types, Manifestations, Results, Models and Faith Immunization (Part One)
+  author: Dr. Ihab Mohamed Atia Abdel Gawad Al-Faidy
+  translator: Hassan Bekhit Hassan
+  summary: >-
+    The first part of a study on the intellectual security of Muslim youth and
+    the prevention of intellectual deviation. Through induction, analysis, and
+    critique, it examines the concept, causes, types, and manifestations of
+    deviation in religious thought, its link to the disruption of societal
+    security, and its impact on the Muslim community in the United States.
+  points:
+    - The causes, types, and manifestations of deviation in religious thought
+    - Its results and its impact on the Muslim community in America
+    - Violent extremist groups, from the Kharijites of early Islamic history to their modern counterparts such as ISIS and al-Qaeda
+    - An analysis and refutation of takfiri ideas, written to warn young people, parents, and educators
+    - "Islam's position on exaggeration and extremism"
+    - A full chapter on immunizing youth against intellectual deviation
+
+- slug: islamic-theory-of-intellectual-security
+  title: The Islamic Theory of Intellectual Security
+  subtitle: Theory into Practice for the Muslim Community in America
+  author: Dr. Ihab Abdel Gawad Al-Faidy
+  translator: Hassan Bekhit Hassan
+  summary: >-
+    In Islam, intellectual security is the state of being able to think clearly
+    and critically, without being influenced by harmful or destructive ideas.
+    This book sets out an Islamic theory of intellectual security and shows how
+    it can be put into practice in the Muslim community in America.
+  points:
+    - "Intellectual security is an integral part of society's overall security"
+    - Security is a fundamental human need, essential to every part of life
+    - "The theory rests on preserving a person's identity and thought from deviation, and on holding to the moderation of Islam"
+    - "It stems from the Holy Qur'an and the purified Sunnah of the Prophet ﷺ"
+    - Flexibility and renewal are characteristics of Islamic thought
+    - "Its pillars: spirituality, values, culture, education, upbringing, and the mosque"
+
+- slug: intensity-of-intellectual-security
+  title: Intensity of Intellectual Security Is Necessity
+  author: Dr. Ihab Abdelgawad Al-Faidy
+  translator: Hassan Bekhit Hassan, ETLA-accredited translator
+  summary: >-
+    Islam has given the utmost care to the family, making its establishment an
+    act of worship. The Prophet ﷺ encouraged young people to marry, advised
+    care in choosing a partner, and emphasized choosing a righteous spouse so
+    that the family is built on a solid foundation. Society is a collection of
+    families: when families are sound and enjoy social and intellectual
+    security, society is strong and healthy; when the family weakens, society
+    becomes fragile.

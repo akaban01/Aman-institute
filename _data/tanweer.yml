@@ -1,0 +1,30 @@
+# Topics covered by the Tanweer online program, grouped by theme (from the program flyer).
+- group: Health & addiction
+  icon: heart-pulse
+  topics:
+    - Smoking
+    - "Intoxicants: drugs & alcohol"
+- group: Life online
+  icon: smartphone
+  topics:
+    - The dark web
+    - Risky video games
+    - Social media issues
+- group: Mental & emotional well-being
+  icon: brain
+  topics:
+    - Bullying
+    - Depression
+    - Mental illness
+    - Suicide
+- group: Ideas & identity
+  icon: lightbulb
+  topics:
+    - Extremism
+    - Gender identity
+- group: Family & school
+  icon: users
+  topics:
+    - Parenting
+    - Extramarital affairs
+    - Academic problems

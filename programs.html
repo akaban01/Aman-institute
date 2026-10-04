@@ -1,0 +1,119 @@
+---
+title: Programs
+permalink: /programs/
+eyebrow: Programs &amp; services
+description: >-
+  The Tanweer online program, counseling, workshops, parenting support,
+  research, and the Intellectual Security Therapy Diploma from Aman Institute.
+intro: >-
+  Professional programs that help young people and families recognize harmful
+  ideas, strengthen their faith and identity, and find practical remedies for
+  the challenges of modern life.
+---
+{%- assign tanweer_video = site.data.videos | where: "id", "e-9J6FgcSLo" | first -%}
+
+<section class="section" id="tanweer">
+  <div class="container split">
+    <div class="flyer-wrap">
+      <figure class="flyer-frame">
+        <img src="{{ '/assets/images/flyers/tanweer-program-flyer-preview.webp' | relative_url }}" alt="Tanweer online program flyer: Youth and the threats to which remedies are required" width="600" height="800" loading="lazy" decoding="async">
+        <figcaption><a href="{{ '/assets/images/flyers/tanweer-program-flyer.jpg' | relative_url }}" download>Download the Tanweer flyer (JPG)</a></figcaption>
+      </figure>
+    </div>
+    <div>
+      <p class="eyebrow">Featured program</p>
+      <h2>Tanweer online program</h2>
+      <div class="pill-row">
+        <span class="pill"><svg class="icon" aria-hidden="true"><use href="#i-video"></use></svg> Online on Zoom</span>
+        <span class="pill navy"><svg class="icon" aria-hidden="true"><use href="#i-lightbulb"></use></svg> “Tanweer” means enlightenment</span>
+      </div>
+      <p class="lead">Youth and the threats to which remedies are required.</p>
+      <p>Tanweer is an online program on the pressures facing young people today, exploring remedies rooted in faith, family, and sound thinking. Its sessions cover topics from smoking and the dark web to depression, extremism, and parenting.</p>
+      <div class="btn-row">
+        <a class="btn btn-navy" href="{{ '/contact/' | relative_url }}">Ask about upcoming sessions</a>
+        {%- if tanweer_video %}
+        <a class="btn btn-outline" href="https://www.youtube.com/watch?v={{ tanweer_video.id }}&amp;t={{ tanweer_video.start }}s" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>
+          Watch the Parenting session
+        </a>
+        {%- endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Tanweer topics</p>
+      <h2>The challenges we address</h2>
+    </div>
+    <ul class="topic-groups">
+      {%- for group in site.data.tanweer %}
+      <li class="topic-group">
+        <div class="topic-group-head">
+          <span class="icon-badge{% cycle '', ' green' %}"><svg class="icon" aria-hidden="true"><use href="#i-{{ group.icon }}"></use></svg></span>
+          <h3>{{ group.group }}</h3>
+        </div>
+        <ul class="chip-list">
+          {%- for topic in group.topics %}
+          <li>{{ topic }}</li>
+          {%- endfor %}
+        </ul>
+      </li>
+      {%- endfor %}
+    </ul>
+    <div class="notice" role="note">
+      <svg class="icon" aria-hidden="true"><use href="#i-life-buoy"></use></svg>
+      <p><strong>Need help right now?</strong> If you or someone you know is in crisis or thinking about suicide, call or text <a href="tel:988">988</a> to reach the 988 Suicide &amp; Crisis Lifeline, available 24/7. In an emergency, call <a href="tel:911">911</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Services</p>
+      <h2>How we help</h2>
+      <p>Alongside Tanweer, the institute offers ongoing services for young people, parents, and the wider community.</p>
+    </div>
+    <ul class="card-grid">
+      {%- for service in site.data.services %}
+      {%- if forloop.last %}
+      <li class="card card-highlight">
+        <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-{{ service.icon }}"></use></svg></span>
+        <div class="card-highlight-body">
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.text }}</p>
+        </div>
+        <a class="btn btn-light btn-sm" href="{{ '/contact/' | relative_url }}">Ask about the diploma</a>
+      </li>
+      {%- else %}
+      <li class="card">
+        <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-{{ service.icon }}"></use></svg></span>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.text }}</p>
+      </li>
+      {%- endif %}
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <h2>Bring Aman to your community</h2>
+        <p>Request a workshop, arrange counseling, or ask about our programs. Download our flyer to share with your mosque, school, or family.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-light" href="{{ '/contact/' | relative_url }}">Contact us</a>
+        <a class="btn btn-outline-light" href="{{ '/assets/images/flyers/aman-institute-flyer.jpg' | relative_url }}" download>
+          <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+          Institute flyer
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
