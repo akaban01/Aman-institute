@@ -1,0 +1,4 @@
+<div class="flex gap-4 rounded-2xl bg-rose-50 p-5 ring-1 ring-rose-200 {{ include.class }}" role="note">
+  {% include icon.html name="life-buoy" class="mt-0.5 size-6 text-brand-red" %}
+  <p class="text-sm/6 text-ink"><strong class="font-semibold">{{ include.lead | default: "Need help right now?" }}</strong> {{ include.text | default: "If you or someone you know is in crisis or thinking about suicide, call or text" }} <a href="tel:988" class="font-semibold text-rose-800 underline underline-offset-2 hover:text-rose-900">988</a> to reach the 988 Suicide &amp; Crisis Lifeline, available 24/7. In an emergency, call <a href="tel:911" class="font-semibold text-rose-800 underline underline-offset-2 hover:text-rose-900">911</a>.</p>
+</div>

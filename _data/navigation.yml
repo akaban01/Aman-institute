@@ -1,0 +1,14 @@
+# Main menu, in display order. `cta: true` renders the item as a button.
+- title: Who is Aman?
+  url: /who-is-aman/
+- title: Programs
+  url: /programs/
+- title: Publications
+  url: /publications/
+- title: Aman Tube
+  url: /aman-tube/
+- title: Board Members
+  url: /board-members/
+- title: Contact
+  url: /contact/
+  cta: true

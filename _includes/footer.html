@@ -1,0 +1,46 @@
+{%- assign addr = site.contact.address -%}
+<footer class="bg-navy-950 text-navy-200">
+  <div class="mx-auto max-w-7xl px-6 pt-16 pb-10 sm:pt-20 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <img src="{{ '/assets/images/logo/aman-institute-logo-white.webp' | relative_url }}" alt="Aman Institute for Intellectual Security Studies" width="120" height="120" loading="lazy" class="size-28">
+        <p class="mt-6 max-w-sm text-sm/6">{{ site.full_name }} is a <span class="whitespace-nowrap">501(c)(3)</span> nonprofit organization working for the intellectual, spiritual, and mental safety of youth.</p>
+        {% include btn.html href=site.social.youtube label="Watch on YouTube" variant="light" icon="youtube" icon_left=true external=true class="mt-6 [&_svg]:text-brand-red" %}
+      </div>
+      <div class="grid gap-10 sm:grid-cols-2 lg:col-span-7 lg:grid-cols-3">
+        <nav aria-label="Footer">
+          <h2 class="text-sm/6 font-semibold text-white">Explore</h2>
+          <ul class="mt-4 space-y-3 text-sm/6">
+            <li><a href="{{ '/' | relative_url }}" class="hover:text-white">Home</a></li>
+            {%- for item in site.data.navigation %}
+            <li><a href="{{ item.url | relative_url }}" class="hover:text-white">{{ item.title }}</a></li>
+            {%- endfor %}
+          </ul>
+        </nav>
+        <div class="sm:col-span-1 lg:col-span-2">
+          <h2 class="text-sm/6 font-semibold text-white">Contact</h2>
+          <ul class="mt-4 space-y-3 text-sm/6">
+            <li class="flex gap-3">
+              {% include icon.html name="map-pin" class="mt-0.5 size-5 text-brand-sky" %}
+              <a href="{{ site.contact.map_url }}" rel="noopener" class="hover:text-white">{{ addr.street }}, {{ addr.city }}, {{ addr.region }} {{ addr.postal_code }}</a>
+            </li>
+            <li class="flex gap-3">
+              {% include icon.html name="mail" class="mt-0.5 size-5 text-brand-sky" %}
+              <a href="mailto:{{ site.contact.email }}" class="break-all hover:text-white">{{ site.contact.email }}</a>
+            </li>
+            {%- for phone in site.contact.phones %}
+            <li class="flex gap-3">
+              {% include icon.html name="phone" class="mt-0.5 size-5 text-brand-sky" %}
+              <a href="tel:{{ phone.tel }}" class="hover:text-white">{{ phone.display }}</a>
+            </li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="mt-14 flex flex-col gap-2 border-t border-white/10 pt-8 text-xs/6 text-navy-300 sm:flex-row sm:justify-between">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.full_name }}. All rights reserved.</p>
+      <p>A 501(c)(3) nonprofit organization &middot; Killeen, Texas</p>
+    </div>
+  </div>
+</footer>

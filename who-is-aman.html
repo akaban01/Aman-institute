@@ -1,0 +1,97 @@
+---
+title: Who is Aman?
+permalink: /who-is-aman/
+eyebrow: About the institute
+description: >-
+  Aman Institute for Intellectual Security Studies is a 501(c)(3) nonprofit that
+  works for the intellectual safety of Muslim youth and addresses deviant
+  thinking through professional programs.
+intro: >-
+  Aman Institute for Intellectual Security Studies is a <span class="whitespace-nowrap">501(c)(3)</span>
+  nonprofit organization that works for the intellectual safety of Muslim youth
+  and addresses deviant thinking through professional programs.
+---
+
+<section class="mx-auto max-w-7xl px-6 py-20 sm:py-28 lg:px-8">
+  <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+    <div class="lg:col-span-7">
+      {% include section-header.html eyebrow="Our mission" title="Safe minds, strong faith, healthy futures" %}
+      <div class="mt-6 space-y-5 text-lg/8 text-ink-soft">
+        <p>Aman Institute promotes the intellectual, spiritual, and mental safety of young people and provides solutions to the deviant thinking that leads to addiction, violence, extremism, and life failure.</p>
+        <p>We work with youth, parents, and the wider community through counseling, workshops, parenting support, research, and online programs such as <a href="{{ '/programs/' | relative_url }}#tanweer" class="font-semibold text-navy-700 underline decoration-navy-700/30 underline-offset-4 hover:decoration-navy-700">Tanweer</a>, grounded in a published series of studies on intellectual security for the Muslim community in America.</p>
+      </div>
+    </div>
+    <aside aria-labelledby="name-heading" class="relative isolate overflow-hidden rounded-3xl bg-navy-900 px-8 py-12 text-center shadow-2xl shadow-navy-900/20 sm:px-12 lg:col-span-5">
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(70%_60%_at_100%_0%,rgb(91_179_220/0.35),transparent),radial-gradient(60%_50%_at_0%_100%,rgb(10_148_79/0.35),transparent)]" aria-hidden="true"></div>
+      <p lang="ar" dir="rtl" class="font-arabic text-8xl leading-tight font-bold text-white sm:text-9xl">أمان</p>
+      <h2 id="name-heading" class="mt-4 font-display text-2xl font-bold text-white">Why “Aman”?</h2>
+      <p class="mt-3 text-pretty text-navy-100"><em>Aman</em> is Arabic for safety, security, and peace of mind. It names what we hope every young person can have: a mind that is protected, a faith that is secure, and a future that is safe.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="bg-navy-50/70 py-20 sm:py-28">
+  <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-20 lg:px-8">
+    <figure class="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-navy-900/5 sm:p-10">
+      {% include icon.html name="quote" class="size-10 text-leaf-600" %}
+      <blockquote class="mt-6 font-display text-2xl/9 font-semibold tracking-tight text-pretty text-navy-950 sm:text-3xl/11">
+        <p>In Islam, intellectual security is the state of being able to think clearly and critically, without being influenced by harmful or destructive ideas.</p>
+      </blockquote>
+      <figcaption class="mt-8 text-sm text-muted">From <cite>The Islamic Theory of Intellectual Security</cite></figcaption>
+    </figure>
+    <div>
+      {% include section-header.html eyebrow="Intellectual security" title="What we mean by intellectual security" %}
+      <ul class="mt-8 space-y-5 text-base/7 text-ink-soft">
+        <li class="flex gap-4">{% include icon.html name="circle-check" class="mt-0.5 size-6 text-leaf-600" %}<span>It is an integral part of the overall security of society, alongside other kinds of security.</span></li>
+        <li class="flex gap-4">{% include icon.html name="circle-check" class="mt-0.5 size-6 text-leaf-600" %}<span>It rests on preserving a person's identity and thinking from deviation, and on holding to the moderation of Islam.</span></li>
+        <li class="flex gap-4">{% include icon.html name="circle-check" class="mt-0.5 size-6 text-leaf-600" %}<span>It stems from the Holy Qur'an and the purified Sunnah of the Prophet ﷺ.</span></li>
+        <li class="flex gap-4">{% include icon.html name="circle-check" class="mt-0.5 size-6 text-leaf-600" %}<span>Flexibility and renewal are characteristics of Islamic thought.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="mx-auto max-w-7xl px-6 py-20 sm:py-28 lg:px-8">
+  {% include section-header.html eyebrow="Our foundations" title="Six pillars of intellectual security" text="The theory of intellectual security in Islam, as set out in the institute's work, stands on six pillars." center=true %}
+  <ol class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {%- for pillar in site.data.pillars %}
+    <li class="relative rounded-3xl bg-white p-7 shadow-sm ring-1 ring-navy-900/10">
+      <span class="absolute top-6 right-7 font-display text-2xl font-bold text-navy-400" aria-hidden="true">{{ forloop.index | prepend: "0" }}</span>
+      <span class="grid size-12 place-items-center rounded-2xl {% cycle 'bg-navy-50 text-navy-700', 'bg-leaf-50 text-leaf-700' %}">{% include icon.html name=pillar.icon class="size-6" %}</span>
+      <h3 class="mt-6 font-display text-lg font-semibold text-navy-950">{{ pillar.title }}</h3>
+      <p class="mt-2 text-sm/6 text-ink-soft">{{ pillar.text }}</p>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+
+<section class="bg-navy-50/70 py-20 sm:py-28">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    {% include section-header.html eyebrow="Why it matters" title="Good for the individual, the family, and society" %}
+    <ul class="mt-14 grid gap-5 lg:grid-cols-3">
+      <li class="rounded-3xl bg-white p-7 shadow-sm ring-1 ring-navy-900/5">
+        <span class="grid size-12 place-items-center rounded-2xl bg-navy-50 text-navy-700">{% include icon.html name="brain" class="size-6" %}</span>
+        <h3 class="mt-6 font-display text-lg font-semibold text-navy-950">The individual</h3>
+        <p class="mt-2 text-sm/6 text-ink-soft">Intellectual security protects the mind from deviant ideology and misguided thinking, so young people can think clearly and choose well.</p>
+      </li>
+      <li class="rounded-3xl bg-white p-7 shadow-sm ring-1 ring-navy-900/5">
+        <span class="grid size-12 place-items-center rounded-2xl bg-leaf-50 text-leaf-700">{% include icon.html name="house-heart" class="size-6" %}</span>
+        <h3 class="mt-6 font-display text-lg font-semibold text-navy-950">The family</h3>
+        <p class="mt-2 text-sm/6 text-ink-soft">Families built on a sound foundation, enjoying social and intellectual security, are the building blocks of a strong and healthy society.</p>
+      </li>
+      <li class="rounded-3xl bg-white p-7 shadow-sm ring-1 ring-navy-900/5">
+        <span class="grid size-12 place-items-center rounded-2xl bg-navy-50 text-navy-700">{% include icon.html name="users" class="size-6" %}</span>
+        <h3 class="mt-6 font-display text-lg font-semibold text-navy-950">The community</h3>
+        <p class="mt-2 text-sm/6 text-ink-soft">It preserves a community's identity and helps detect deviant ideologies before they take root.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+{%- capture cta_buttons -%}
+  {% capture board_url %}{{ '/board-members/' | relative_url }}{% endcapture %}
+  {% capture programs_url %}{{ '/programs/' | relative_url }}{% endcapture %}
+  {% include btn.html href=board_url label="Board members" variant="light" icon="arrow-right" %}
+  {% include btn.html href=programs_url label="Our programs" variant="outline-light" %}
+{%- endcapture -%}
+{% include cta.html title="Meet the people behind Aman" text="Aman Institute is led by a board of directors under the presidency of Dr. Ihab Abdelgawad Al-Faidy." buttons=cta_buttons %}

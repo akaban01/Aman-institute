@@ -1,0 +1,236 @@
+---
+layout: default
+title: Home
+---
+{%- assign featured_videos = site.data.videos | where: "featured", true -%}
+{%- assign primary_phone = site.contact.phones | first -%}
+{%- assign theory_book = site.data.books | where: "slug", "islamic-theory-of-intellectual-security" | first -%}
+{%- capture programs_url %}{{ '/programs/' | relative_url }}{% endcapture -%}
+{%- capture contact_url %}{{ '/contact/' | relative_url }}{% endcapture -%}
+
+{%- comment -%} Hero {%- endcomment %}
+<section class="relative isolate overflow-hidden bg-white">
+  {% include bg-decor.html id="hero-grid" %}
+  <div class="mx-auto grid max-w-7xl items-center gap-x-8 gap-y-20 px-6 pt-14 pb-24 sm:pt-20 lg:grid-cols-12 lg:px-8 lg:pt-24 lg:pb-32">
+    <div class="lg:col-span-7">
+      <p class="inline-flex items-center gap-x-2 rounded-full bg-white/80 py-1 pr-3.5 pl-1 text-sm/6 text-ink-soft ring-1 ring-navy-900/10">
+        <span class="rounded-full bg-leaf-50 px-2.5 py-0.5 text-xs font-semibold whitespace-nowrap text-leaf-800 ring-1 ring-leaf-700/20 ring-inset">501(c)(3)</span>
+        <span>Nonprofit<span class="hidden sm:inline"> organization</span> &middot; Killeen, Texas</span>
+      </p>
+      <h1 class="mt-8 font-display text-5xl font-extrabold tracking-tight text-balance text-navy-950 sm:text-6xl xl:text-7xl">
+        <span class="bg-linear-to-r from-navy-700 to-leaf-600 bg-clip-text text-transparent">Intellectual security</span> for Muslim youth in America
+      </h1>
+      <p class="mt-8 max-w-2xl text-lg/8 text-pretty text-ink-soft sm:text-xl/8">We promote the intellectual, spiritual, and mental safety of young people, and offer solutions to the deviant thinking that leads to addiction, violence, extremism, and life failure.</p>
+      <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
+        {% include btn.html href=programs_url label="Explore our programs" icon="arrow-right" %}
+        <a href="{{ '/aman-tube/' | relative_url }}" class="group inline-flex items-center gap-3 rounded-full text-sm/6 font-semibold text-navy-900">
+          <span class="grid size-11 place-items-center rounded-full bg-white shadow-sm ring-1 ring-navy-900/10 transition group-hover:ring-navy-900/25">{% include icon.html name="play" class="size-4 translate-x-px fill-current" %}</span>
+          Watch Aman Tube
+        </a>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5">
+      <div class="relative mx-auto max-w-md">
+        <div class="relative isolate overflow-hidden rounded-[2rem] bg-navy-900 px-10 pt-12 pb-14 shadow-2xl shadow-navy-900/30 ring-1 ring-white/10">
+          <div class="absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_75%_15%,rgb(91_179_220/0.4),transparent),radial-gradient(55%_45%_at_10%_100%,rgb(10_148_79/0.45),transparent)]" aria-hidden="true"></div>
+          <svg class="absolute inset-x-0 -bottom-28 -z-10 mx-auto w-[135%] max-w-none -translate-x-[13%] text-white/10" viewBox="0 0 600 600" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M180 600V330a120 120 0 0 1 240 0v270"/><path d="M130 600V330a170 170 0 0 1 340 0v270"/><path d="M80 600V330a220 220 0 0 1 440 0v270"/><path d="M30 600V330a270 270 0 0 1 540 0v270"/>
+          </svg>
+          <img src="{{ '/assets/images/logo/aman-institute-logo-white.webp' | relative_url }}" alt="Aman Institute USA logo: For Youth Intellectual Security Studies" width="489" height="487" fetchpriority="high" class="mx-auto w-full max-w-72 drop-shadow-2xl">
+        </div>
+        <img src="{{ '/assets/images/books/islamic-theory-of-intellectual-security.webp' | relative_url }}" alt="" width="560" height="812" class="absolute -bottom-12 -left-8 hidden w-28 -rotate-6 rounded-l-sm rounded-r-lg shadow-2xl ring-1 ring-black/10 sm:block lg:-left-14 lg:w-32">
+        <div class="absolute -top-6 -right-4 hidden items-center gap-3 rounded-2xl bg-white/95 p-3 pr-5 shadow-xl ring-1 ring-navy-900/10 backdrop-blur sm:flex lg:-right-8">
+          <span class="grid size-10 place-items-center rounded-xl bg-leaf-50 text-leaf-700">{% include icon.html name="video" %}</span>
+          <span class="leading-tight"><span class="block text-sm font-semibold text-navy-950">Tanweer program</span><span class="mt-0.5 block text-xs text-muted">Online on Zoom</span></span>
+        </div>
+        <div class="absolute -right-6 -bottom-7 hidden items-center gap-3 rounded-2xl bg-white/95 p-3 pr-5 shadow-xl ring-1 ring-navy-900/10 backdrop-blur sm:flex lg:-right-10">
+          <span class="grid size-10 place-items-center rounded-xl bg-navy-50 text-navy-700">{% include icon.html name="monitor-play" %}</span>
+          <span class="leading-tight"><span class="block text-sm font-semibold text-navy-950">Aman Tube</span><span class="mt-0.5 block text-xs text-muted">Lectures &amp; classes</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- comment -%} Key facts {%- endcomment %}
+<section aria-label="Key facts" class="border-y border-navy-900/10 bg-navy-50/70">
+  <ul class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-6 px-6 py-8 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
+    <li class="flex items-center gap-4">
+      <span class="grid size-11 shrink-0 place-items-center rounded-xl bg-white text-navy-700 shadow-sm ring-1 ring-navy-900/5">{% include icon.html name="shield-check" %}</span>
+      <p class="text-sm"><strong class="block font-semibold text-navy-950">501(c)(3) nonprofit</strong><span class="text-muted">Serving youth and families</span></p>
+    </li>
+    <li class="flex items-center gap-4">
+      <span class="grid size-11 shrink-0 place-items-center rounded-xl bg-white text-leaf-700 shadow-sm ring-1 ring-navy-900/5">{% include icon.html name="map-pin" %}</span>
+      <p class="text-sm"><strong class="block font-semibold text-navy-950">Killeen, Texas</strong><span class="text-muted">For the Muslim community in America</span></p>
+    </li>
+    <li class="flex items-center gap-4">
+      <span class="grid size-11 shrink-0 place-items-center rounded-xl bg-white text-navy-700 shadow-sm ring-1 ring-navy-900/5">{% include icon.html name="video" %}</span>
+      <p class="text-sm"><strong class="block font-semibold text-navy-950">Online programs</strong><span class="text-muted">Tanweer sessions on Zoom</span></p>
+    </li>
+    <li class="flex items-center gap-4">
+      <span class="grid size-11 shrink-0 place-items-center rounded-xl bg-white text-leaf-700 shadow-sm ring-1 ring-navy-900/5">{% include icon.html name="book-open-text" %}</span>
+      <p class="text-sm"><strong class="block font-semibold text-navy-950">{{ site.data.books.size }} published books</strong><span class="text-muted">In English translation</span></p>
+    </li>
+  </ul>
+</section>
+
+{%- comment -%} Who we are {%- endcomment %}
+<section class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+  <div class="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+    <div>
+      {% include section-header.html eyebrow="Who we are" title="Aman means safety" %}
+      <p class="mt-6 text-lg/8 text-ink-soft"><span lang="ar" dir="rtl" class="font-arabic text-2xl font-bold text-navy-800">أمان</span> (<em>aman</em>) is the Arabic word for safety and security. Aman Institute works for the intellectual safety of Muslim youth and addresses deviant thinking through professional programs, counseling, and research.</p>
+      <p class="mt-8 text-sm font-semibold text-navy-950">Six pillars of intellectual security</p>
+      <ul class="mt-3 flex flex-wrap gap-2">
+        {%- for pillar in site.data.pillars %}
+        <li class="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-sm font-medium text-navy-900 shadow-sm ring-1 ring-navy-900/10">{% include icon.html name=pillar.icon class="size-4 text-leaf-700" %}{{ pillar.title }}</li>
+        {%- endfor %}
+      </ul>
+      <a href="{{ '/who-is-aman/' | relative_url }}" class="group mt-10 inline-flex items-center gap-2 text-sm/6 font-semibold text-navy-700 hover:text-navy-900">Who is Aman? {% include icon.html name="arrow-right" class="size-4 transition group-hover:translate-x-0.5" %}</a>
+    </div>
+    <figure class="relative isolate overflow-hidden rounded-3xl bg-navy-900 p-8 shadow-2xl shadow-navy-900/20 sm:p-12">
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(70%_60%_at_100%_0%,rgb(91_179_220/0.3),transparent),radial-gradient(60%_50%_at_0%_100%,rgb(10_148_79/0.3),transparent)]" aria-hidden="true"></div>
+      {% include icon.html name="quote" class="size-10 text-brand-lime" %}
+      <blockquote class="mt-6 font-display text-2xl/9 font-semibold tracking-tight text-pretty text-white sm:text-3xl/11">
+        <p>In Islam, intellectual security is the state of being able to think clearly and critically, without being influenced by harmful or destructive ideas.</p>
+      </blockquote>
+      <figcaption class="mt-10 flex items-center gap-4 border-t border-white/10 pt-6">
+        <img src="{{ '/assets/images/books/' | append: theory_book.slug | append: '.webp' | relative_url }}" alt="" width="560" height="812" loading="lazy" class="w-10 rounded-sm shadow-lg ring-1 ring-white/10">
+        <div class="text-sm/6">
+          <cite class="block font-semibold text-white not-italic">{{ theory_book.title }}</cite>
+          <span class="text-navy-200">Dr. Ihab Abdel Gawad Al&#8209;Faidy</span>
+        </div>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+{%- comment -%} What we do {%- endcomment %}
+<section class="bg-navy-50/70 py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      {% include section-header.html eyebrow="What we do" title="Support for youth, parents, and communities" text="Professional programs and services that protect young minds, strengthen faith and identity, and help families thrive." %}
+      <a href="{{ programs_url }}" class="group inline-flex items-center gap-2 text-sm/6 font-semibold text-navy-700 hover:text-navy-900">All programs and services {% include icon.html name="arrow-right" class="size-4 transition group-hover:translate-x-0.5" %}</a>
+    </div>
+    <ul class="mt-14 grid grid-flow-dense gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {%- for service in site.data.services %}
+      {%- if forloop.last %}
+      <li class="relative isolate flex flex-col overflow-hidden rounded-3xl bg-navy-900 p-7 shadow-xl shadow-navy-900/20 sm:col-span-2">
+        <div class="absolute inset-0 -z-10 bg-[radial-gradient(60%_80%_at_100%_0%,rgb(91_179_220/0.35),transparent),radial-gradient(50%_70%_at_0%_100%,rgb(10_148_79/0.35),transparent)]" aria-hidden="true"></div>
+        <span class="grid size-12 place-items-center rounded-2xl bg-white/10 text-brand-lime ring-1 ring-white/15">{% include icon.html name=service.icon class="size-6" %}</span>
+        <h3 class="mt-6 font-display text-xl font-bold text-white">{{ service.title }}</h3>
+        <p class="mt-2 max-w-md text-navy-100">{{ service.text }}</p>
+        <a href="{{ contact_url }}" class="group mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-white hover:text-brand-lime">Ask about the diploma {% include icon.html name="arrow-right" class="size-4 transition group-hover:translate-x-0.5" %}</a>
+      </li>
+      {%- else %}
+      <li class="rounded-3xl bg-white p-7 shadow-sm ring-1 ring-navy-900/5 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-navy-900/5">
+        <span class="grid size-12 place-items-center rounded-2xl {% cycle 'bg-navy-50 text-navy-700', 'bg-leaf-50 text-leaf-700' %}">{% include icon.html name=service.icon class="size-6" %}</span>
+        <h3 class="mt-6 font-display text-lg font-semibold text-navy-950">{{ service.title }}</h3>
+        <p class="mt-2 text-sm/6 text-ink-soft">{{ service.text }}</p>
+      </li>
+      {%- endif %}
+      {%- endfor %}
+      <li class="flex flex-col rounded-3xl border-2 border-dashed border-navy-900/15 p-7">
+        <span class="grid size-12 place-items-center rounded-2xl bg-white text-navy-700 ring-1 ring-navy-900/10">{% include icon.html name="messages-square" class="size-6" %}</span>
+        <h3 class="mt-6 font-display text-lg font-semibold text-navy-950">Not sure where to start?</h3>
+        <p class="mt-2 text-sm/6 text-ink-soft">Tell us what you or your family are facing, and we'll point you in the right direction.</p>
+        <a href="{{ contact_url }}" class="group mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-leaf-700 hover:text-leaf-800">Contact us {% include icon.html name="arrow-right" class="size-4 transition group-hover:translate-x-0.5" %}</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+{%- comment -%} Tanweer {%- endcomment %}
+<section class="relative isolate overflow-hidden bg-navy-950 py-24 sm:py-32">
+  <div class="absolute inset-0 -z-10 bg-[radial-gradient(45%_60%_at_85%_30%,rgb(91_179_220/0.22),transparent),radial-gradient(40%_50%_at_10%_90%,rgb(10_148_79/0.25),transparent)]" aria-hidden="true"></div>
+  <div class="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-12 lg:px-8">
+    <div class="lg:col-span-7">
+      {% include section-header.html eyebrow="Featured program" title="Tanweer: guiding youth through today's challenges" text="Tanweer, meaning “enlightenment” in Arabic, is our online program on the threats young people face today and the remedies they need." dark=true %}
+      <dl class="mt-10 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+        {%- for group in site.data.tanweer %}
+        <div>
+          <dt class="flex items-center gap-3 text-sm font-semibold text-white"><span class="grid size-8 place-items-center rounded-lg bg-white/10 text-brand-lime ring-1 ring-white/10">{% include icon.html name=group.icon class="size-4" %}</span>{{ group.group }}</dt>
+          <dd class="mt-2 text-sm/6 text-navy-200">{{ group.topics | join: ", " }}</dd>
+        </div>
+        {%- endfor %}
+      </dl>
+      <div class="mt-10 flex flex-wrap gap-3">
+        {% capture tanweer_url %}{{ programs_url }}#tanweer{% endcapture %}
+        {% include btn.html href=tanweer_url label="About Tanweer" variant="light" icon="arrow-right" %}
+        {% include btn.html href=contact_url label="Ask about the schedule" variant="outline-light" %}
+      </div>
+    </div>
+    <div class="lg:col-span-5">
+      <div class="relative mx-auto max-w-sm rotate-2 rounded-[1.75rem] bg-white/5 p-2.5 shadow-2xl ring-1 ring-white/15 transition duration-500 hover:rotate-0">
+        <img src="{{ '/assets/images/flyers/tanweer-program-flyer-preview.webp' | relative_url }}" alt="Tanweer online program flyer: Youth and the threats to which remedies are required" width="600" height="800" loading="lazy" decoding="async" class="w-full rounded-[1.25rem]">
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- comment -%} Publications {%- endcomment %}
+<section class="py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      {% include section-header.html eyebrow="Publications" title="A book series on intellectual security" text="Written by the institute's president, Dr. Ihab Abdelgawad Al-Faidy, and translated into English." %}
+      <a href="{{ '/publications/' | relative_url }}" class="group inline-flex items-center gap-2 text-sm/6 font-semibold text-navy-700 hover:text-navy-900">Browse publications {% include icon.html name="arrow-right" class="size-4 transition group-hover:translate-x-0.5" %}</a>
+    </div>
+    <ul class="mt-14 grid grid-cols-2 gap-x-6 gap-y-12 sm:gap-x-10 lg:grid-cols-4">
+      {%- for book in site.data.books %}
+      <li>{% include book-card.html book=book %}</li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+{%- comment -%} Aman Tube {%- endcomment %}
+<section class="bg-navy-50/70 py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      {% include section-header.html eyebrow="Aman Tube" title="Lectures, classes, and program sessions" %}
+      <a href="{{ '/aman-tube/' | relative_url }}" class="group inline-flex items-center gap-2 text-sm/6 font-semibold text-navy-700 hover:text-navy-900">All videos {% include icon.html name="arrow-right" class="size-4 transition group-hover:translate-x-0.5" %}</a>
+    </div>
+    <ul class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {%- for video in featured_videos %}
+      <li>{% include video-card.html video=video %}</li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+{%- comment -%} From our president {%- endcomment %}
+<section class="py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto grid max-w-5xl items-center gap-12 lg:grid-cols-[auto_1fr] lg:gap-16">
+      <div class="relative isolate mx-auto w-56 sm:w-64 lg:w-72">
+        <div class="absolute -inset-3 -z-10 rotate-3 rounded-[2rem] bg-linear-to-br from-brand-sky to-leaf-600 opacity-80" aria-hidden="true"></div>
+        <img src="{{ '/assets/images/people/ihab-abdelgawad.webp' | relative_url }}" alt="Portrait of Dr. Ihab Abdelgawad Al-Faidy" width="480" height="480" loading="lazy" decoding="async" class="relative aspect-square w-full rounded-[1.75rem] object-cover shadow-xl">
+      </div>
+      <div>
+        <p class="text-base/7 font-semibold text-leaf-700">From our president</p>
+        <figure class="mt-4">
+          <blockquote class="font-display text-2xl/9 font-semibold tracking-tight text-pretty text-navy-950 sm:text-3xl/11">
+            <p>“Human society is composed of a collection of families. If these families are built on a sound foundation and enjoy social and intellectual security, the society will be strong, solid, and healthy.”</p>
+          </blockquote>
+          <figcaption class="mt-8 text-sm/6">
+            <span class="block text-base font-semibold text-navy-950">Dr. Ihab Abdelgawad Al-Faidy</span>
+            <span class="text-muted">President, Aman Institute &middot; from <cite>Intensity of Intellectual Security Is Necessity</cite></span>
+          </figcaption>
+        </figure>
+        <div class="mt-8">
+          {% capture board_url %}{{ '/board-members/' | relative_url }}{% endcapture %}
+          {% include btn.html href=board_url label="Meet the board" variant="outline" icon="arrow-right" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- capture cta_buttons -%}
+  {% capture mail_url %}mailto:{{ site.contact.email }}{% endcapture %}
+  {% capture tel_url %}tel:{{ primary_phone.tel }}{% endcapture %}
+  {% include btn.html href=mail_url label="Email us" variant="light" icon="mail" icon_left=true %}
+  {% include btn.html href=tel_url label=primary_phone.display variant="outline-light" icon="phone" icon_left=true %}
+{%- endcapture -%}
+{% include cta.html title="Let's talk" text="Questions about our programs, counseling, workshops, or publications? We would be glad to hear from you." buttons=cta_buttons %}

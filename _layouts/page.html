@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<header class="relative isolate overflow-hidden bg-white">
+  {% include bg-decor.html id="page-hero-grid" %}
+  <div class="mx-auto max-w-7xl px-6 pt-16 pb-14 sm:pt-24 sm:pb-20 lg:px-8">
+    <div class="max-w-3xl">
+      {%- if page.eyebrow %}
+      <p class="text-base/7 font-semibold text-leaf-700">{{ page.eyebrow }}</p>
+      {%- endif %}
+      <h1 class="mt-2 font-display text-4xl font-extrabold tracking-tight text-balance text-navy-950 sm:text-6xl">{{ page.heading | default: page.title }}</h1>
+      {%- if page.intro %}
+      <p class="mt-6 text-lg/8 text-pretty text-ink-soft sm:text-xl/8">{{ page.intro }}</p>
+      {%- endif %}
+    </div>
+  </div>
+</header>
+{{ content }}

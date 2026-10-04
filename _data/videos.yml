@@ -1,0 +1,40 @@
+# Aman Tube videos, in display order. To add a video, copy an entry and paste the
+# YouTube video id (the part after "watch?v="). `start` (seconds) and `featured`
+# (shown on the home page) are optional.
+- id: WEa1fqNCLBo
+  title: Introduction to Aman Institute
+  speaker: Aman Institute
+  featured: true
+- id: dyI13yMekTw
+  title: Youth & Lack of Motivation
+  speaker: Chaplain Jamal Bey
+  start: 785
+  featured: true
+- id: e-9J6FgcSLo
+  title: Parenting
+  series: Tanweer Program
+  start: 1569
+  featured: true
+- id: PUEA-pbSn5Q
+  title: Youth & Lack of Islamic Knowledge
+  series: American Muslim Youth Crises
+- id: Xc_ifllhasg
+  title: Respecting Parents
+  series: American Muslim Youth Crises
+  start: 1070
+- id: DzJqsvM21iI
+  title: "Boyfriend & Girlfriend: What Does Islam Say?"
+  series: American Muslim Youth Crises
+- id: -vRELQFXvVE
+  title: "Lack of Spirituality for Youth: How to Recover"
+  start: 2
+- id: Qk93t1auVEE
+  title: Lack of Spirituality for Youth
+  start: 1457
+- id: 3W25Ju-URRk
+  title: Anti-Violence Class
+  speaker: Chaplain Jamal Bey, U.S. Army
+- id: lNa8fqD_1Lw
+  title: Pre-Marital Sex and Extra-Marital Affairs
+  speaker: Prof. Brian L. Nowell
+  start: 16

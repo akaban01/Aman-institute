@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+{% include head.html %}
+</head>
+<body class="flex min-h-dvh flex-col">
+{% include icons.svg %}
+<a href="#main" class="sr-only rounded-lg bg-navy-950 px-4 py-2.5 text-sm font-semibold text-white focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100]">Skip to main content</a>
+{% include header.html %}
+<main id="main" tabindex="-1" class="flex-1">
+{{ content }}
+</main>
+{% include footer.html %}
+<script src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+</body>
+</html>
