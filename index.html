@@ -3,7 +3,6 @@ layout: default
 title: Home
 ---
 {%- assign featured_videos = site.data.videos | where: "featured", true -%}
-{%- assign primary_phone = site.contact.phones | first -%}
 {%- assign theory_book = site.data.books | where: "slug", "islamic-theory-of-intellectual-security" | first -%}
 {%- capture programs_url %}{{ '/programs/' | relative_url }}{% endcapture -%}
 {%- capture contact_url %}{{ '/contact/' | relative_url }}{% endcapture -%}
@@ -229,8 +228,7 @@ title: Home
 
 {%- capture cta_buttons -%}
   {% capture mail_url %}mailto:{{ site.contact.email }}{% endcapture %}
-  {% capture tel_url %}tel:{{ primary_phone.tel }}{% endcapture %}
   {% include btn.html href=mail_url label="Email us" variant="light" icon="mail" icon_left=true %}
-  {% include btn.html href=tel_url label=primary_phone.display variant="outline-light" icon="phone" icon_left=true %}
+  {% include btn.html href=site.contact.form_url label="Contact form" variant="outline-light" icon="messages-square" icon_left=true external=true %}
 {%- endcapture -%}
 {% include cta.html title="Let's talk" text="Questions about our programs, counseling, workshops, or publications? We would be glad to hear from you." buttons=cta_buttons %}
