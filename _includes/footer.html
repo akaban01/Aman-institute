@@ -1,4 +1,3 @@
-{%- assign addr = site.contact.address -%}
 <footer class="bg-navy-950 text-navy-200">
   <div class="mx-auto max-w-7xl px-6 pt-16 pb-10 sm:pt-20 lg:px-8">
     <div class="grid gap-12 lg:grid-cols-12">
@@ -21,19 +20,13 @@
           <h2 class="text-sm/6 font-semibold text-white">Contact</h2>
           <ul class="mt-4 space-y-3 text-sm/6">
             <li class="flex gap-3">
-              {% include icon.html name="map-pin" class="mt-0.5 size-5 text-brand-sky" %}
-              <a href="{{ site.contact.map_url }}" rel="noopener" class="hover:text-white">{{ addr.street }}, {{ addr.city }}, {{ addr.region }} {{ addr.postal_code }}</a>
-            </li>
-            <li class="flex gap-3">
               {% include icon.html name="mail" class="mt-0.5 size-5 text-brand-sky" %}
               <a href="mailto:{{ site.contact.email }}" class="break-all hover:text-white">{{ site.contact.email }}</a>
             </li>
-            {%- for phone in site.contact.phones %}
             <li class="flex gap-3">
-              {% include icon.html name="phone" class="mt-0.5 size-5 text-brand-sky" %}
-              <a href="tel:{{ phone.tel }}" class="hover:text-white">{{ phone.display }}</a>
+              {% include icon.html name="messages-square" class="mt-0.5 size-5 text-brand-sky" %}
+              <a href="{{ site.contact.form_url }}" rel="noopener" class="hover:text-white">Contact form</a>
             </li>
-            {%- endfor %}
           </ul>
         </div>
       </div>
