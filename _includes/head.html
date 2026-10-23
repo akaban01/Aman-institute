@@ -50,17 +50,7 @@
   "url": {{ '/' | absolute_url | jsonify }},
   "logo": {{ '/assets/images/logo/aman-institute-logo.png' | absolute_url | jsonify }},
   "image": {{ og_image | jsonify }},
-  "email": {{ site.contact.email | jsonify }},
-  "telephone": {{ site.contact.phones[0].tel | jsonify }},
   "nonprofitStatus": "Nonprofit501c3",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": {{ site.contact.address.street | jsonify }},
-    "addressLocality": {{ site.contact.address.city | jsonify }},
-    "addressRegion": {{ site.contact.address.region | jsonify }},
-    "postalCode": {{ site.contact.address.postal_code | jsonify }},
-    "addressCountry": {{ site.contact.address.country | jsonify }}
-  },
   "sameAs": [{{ site.social.youtube | jsonify }}]
 }
 </script>

@@ -43,16 +43,4 @@
     link.replaceWith(frame);
     iframe.focus();
   });
-  document.querySelectorAll("[data-copy]").forEach(function (button) {
-    if (!navigator.clipboard) return;
-    button.hidden = false;
-    var label = button.querySelector("span");
-    var original = label.textContent;
-    button.addEventListener("click", function () {
-      navigator.clipboard.writeText(button.dataset.copy).then(function () {
-        label.textContent = "Copied!";
-        setTimeout(function () { label.textContent = original; }, 2000);
-      });
-    });
-  });
 })();
