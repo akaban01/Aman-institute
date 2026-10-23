@@ -227,8 +227,6 @@ title: Home
 </section>
 
 {%- capture cta_buttons -%}
-  {% capture mail_url %}mailto:{{ site.contact.email }}{% endcapture %}
-  {% include btn.html href=mail_url label="Email us" variant="light" icon="mail" icon_left=true %}
-  {% include btn.html href=site.contact.form_url label="Contact form" variant="outline-light" icon="messages-square" icon_left=true external=true %}
+  {% include btn.html href=site.contact.form_url label="Contact form" variant="light" icon="messages-square" icon_left=true external=true %}
 {%- endcapture -%}
 {% include cta.html title="Let's talk" text="Questions about our programs, counseling, workshops, or publications? We would be glad to hear from you." buttons=cta_buttons %}
